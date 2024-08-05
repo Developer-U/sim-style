@@ -40,12 +40,11 @@ if ($query_reviews->have_posts()) { ?>
 
             <ul class="reviews__list services-list d-grid align-items-start">
                 <?php
-                if ($query_reviews->have_posts()) { ?>
-                    <?php while ($query_reviews->have_posts()):
-                        $query_reviews->the_post();
+                if ($query_reviews->have_posts()) {                     
+                    while ($query_reviews->have_posts()):
+                        $query_reviews->the_post();                        
 
                         get_template_part('template-parts/reviews', 'listing-content');
-
                     endwhile;
                     wp_reset_postdata() ?>
                 <?php } ?>

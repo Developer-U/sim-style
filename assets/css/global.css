@@ -11,89 +11,122 @@
     --red: #CC0033;
     --dark-red: #A9002A;
 }
+
+@keyframes slide-top-down {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(12px);
+    }
+}
+
 body p {
     margin-bottom: inherit;
 }
+
 body, body p {
     font-size: 18px;
 }
+
 body, body p, body h1, body h2, body h3, body h4, body span {
     line-height: 140%;
 }
+
 body .container {
     max-width: 1440px;
 }
+
 figure {
     overflow: hidden;
 }
+
 figure img {
-    width:100%;
+    width: 100%;
     height: 100%;
     object-fit: cover;
 }
+
 .blue-text {
     color: var(--blue);
 }
+
 body ul, body li {
     list-style-type: none;
     padding-left: 0;
     margin-bottom: inherit;
 }
+
 section {
     padding-top: 110px;
     padding-bottom: 110px;
 }
+
 section.dark {
     background-color: var(--black);
 }
+
 section.dark * {
     color: var(--platinum);
 }
+
 section.tariffs.dark.singular h2 {
     color: var(--black);
 }
+
 section.single-works {
     padding-top: 0;
     padding-bottom: 0;
 }
+
 section.publications {
     padding-top: 0;
 }
+
 section.footer {
     padding-top: 88px;
     padding-bottom: 88px;
 }
+
 section.contacts {
     background-color: #fff;
     text-align: center;
 }
+
 section.top-block {
     padding-top: 145px;
     padding-bottom: 100px;
 }
+
 section.top-block.single {
     padding-top: 14vw;
     padding-bottom: 118px;
 }
+
 .single-post section.top-block.single {
     padding-top: 11vw;
     padding-bottom: 70px;
 }
+
 section.top-block.single * {
     color: var(--white);
 }
+
 section.top-block.single span.overlay {
     position: absolute;
-    width:100%;
-    height:100%;
-    top:0;
-    left:0;
-    background: rgba(0,0,0,.35);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .35);
 }
+
 .closed {
     overflow-y: hidden;
     height: 100vh;
 }
+
 button, a.button {
     width: fit-content;
     display: flex;
@@ -103,62 +136,79 @@ button, a.button {
 
     transition: all .25s ease-in-out;
 }
+
 button:hover, a.button:hover, button:focus, a.button:focus {
     transition: all .25s ease-in-out;
 }
+
 body .red-btn {
     background-color: var(--red);
     border: 2px solid var(--red);
     color: var(--white);
 }
+
 body .transparent-btn {
     background-color: transparent;
     border: 2px solid var(--red);
     color: var(--red);
 }
+
 body button.red-btn:hover, body a.button.red-btn:hover, body button.red-btn:focus, body a.button.red-btn:focus {
-    background-color: var(--red);    
-    border-color: var(--red);
+    background-color: var(--dark-red);
+    border-color: var(--dark-red);
     color: var(--white);
 }
+
 body button.red-btn:active, body a.button.red-btn:active {
-    background-color: var(--red-hover);    
+    background-color: var(--red-hover);
     border-color: var(--red-hover);
 }
+
 .post p:not(:last-of-type), .post ul, .post ol {
     margin-bottom: 1.5rem;
 }
+
 .post ul, .post ol {
     padding-left: 40px;
 }
+
 .post.work-process__text ol, .post.work-process__text ul {
     padding-left: 24px;
 }
+
 .post.work-process__text ol li, .post.work-process__text ul li {
     margin-bottom: 12px;
 }
+
 .post ul li {
-    list-style-type: disc;    
+    list-style-type: disc;
 }
+
 .post ol li {
     list-style-type: inherit;
 }
+
 .post figure {
     margin-bottom: 2rem;
 }
+
 .post figure.portfolio-item__image {
     margin-bottom: 0;
 }
+
 .post h2 {
     font-size: 36px;
 }
+
 .grid-four {
     grid-template-columns: repeat(4, 1fr);
-    gap:10px;
+    gap: 10px;
 }
+
 .tariffs.singular .grid-four {
-    grid-template-columns: repeat(2, 1fr);    
+    grid-template-columns: repeat(2, 1fr);
 }
+
 .post blockquote {
     padding: 40px 80px;
     border: 1px solid var(--blue);
@@ -167,34 +217,42 @@ body button.red-btn:active, body a.button.red-btn:active {
     border-inline-start-color: var(--blue) !important;
     border-inline-start-width: 1px !important;
 }
+
 .post blockquote p {
     font-size: x-large;
     font-weight: 300;
 }
+
 .page-numbers {
     display: flex;
     align-items: center;
     gap: 30px;
 }
+
 .page-numbers li span, .page-numbers li a {
     font-weight: bold;
     color: var(--black);
 }
+
 .page-numbers li span.current {
     font-size: 30px;
     color: var(--blue);
 }
+
 ::-webkit-scrollbar {
-    width:4px;
-    height:4px;
+    width: 4px;
+    height: 4px;
 }
+
 ::-webkit-scrollbar-track {
-    background: #ddd;    
+    background: #ddd;
 }
+
 ::-webkit-scrollbar-thumb {
     background: var(--blue);
     cursor: pointer;
 }
+
 .standart {
     margin-bottom: 4rem;
 }
@@ -203,18 +261,23 @@ body button.red-btn:active, body a.button.red-btn:active {
     body, body p {
         font-size: 16px;
     }
+
     .post h2 {
         font-size: 32px;
     }
+
     body .post .wp-block-spacer[style="height:100px"] {
         height: 80px !important;
     }
+
     .post p:not(:last-of-type) {
         margin-bottom: 1.2rem;
     }
+
     button, a.button {
         font-size: 16px;
     }
+
     section.footer {
         padding-top: 74px;
         padding-bottom: 50px;
@@ -226,137 +289,171 @@ body button.red-btn:active, body a.button.red-btn:active {
         padding-top: 90px;
         padding-bottom: 90px;
     }
+
     .post h2 {
         font-size: 26px;
     }
+
     .grid-four {
         grid-template-columns: repeat(2, 1fr);
     }
+
     section.top-block {
         padding-top: 124px;
         padding-bottom: 50px;
-    }      
+    }
+
     body .post .wp-block-spacer[style="height:100px"] {
         height: 60px !important;
-    } 
+    }
+
     .post blockquote p {
         font-size: 20px;
-    }  
+    }
 }
+
 @media (max-width:1199px) {
     button, a.button {
         font-size: 15px;
         padding: 2px 11px;
     }
+
     section.top-block {
         padding-top: 112px;
         padding-bottom: 38px;
     }
-    .single-post section.top-block.single {        
+
+    .single-post section.top-block.single {
         padding-bottom: 30px;
     }
 }
+
 /* Media from Blocksy theme */
 @media (max-width:999.98px) {
     section {
         padding-top: 80px;
         padding-bottom: 80px;
     }
+
     body .post .wp-block-spacer[style="height:100px"] {
         height: 40px !important;
     }
+
     .post h2 {
         font-size: 22px;
     }
 }
+
 @media (max-width:930px) and (max-height: 420px) {
     section.top-block {
         padding-top: 40px;
         padding-bottom: 30px;
     }
+
     .blog section.top-block.single {
         padding-top: 66px;
         padding-bottom: 27px;
     }
 }
+
 @media (min-width: 768px) {
     .position-md-absolute {
         position: absolute !important;
     }
 }
-@media (max-width:767px) {  
+
+@media (max-width:767px) {
     .grid-four {
         grid-template-columns: 1fr;
     }
+
     section.footer {
         padding-top: 60px;
     }
+
     section.top-block {
         padding-top: 80px;
         padding-bottom: 36px;
     }
+
     .post h2 {
         font-size: 19px;
     }
+
     .tariffs.singular .grid-four {
         grid-template-columns: 1fr;
     }
+
     .blog section.top-block.single {
         padding-top: 22vw;
         padding-bottom: 20vw;
     }
 }
+
 @media (max-width:767px) and (max-height: 420px) {
     section.top-block {
         padding-top: 40px;
         padding-bottom: 30px;
     }
+
     .blog section.top-block.single {
         padding-top: 66px;
         padding-bottom: 27px;
     }
 }
-@media (max-width:689.98px) { 
+
+@media (max-width:689.98px) {
     body .ct-container, body .ct-container-narrow {
         width: calc(100% - 32px);
-    } 
+    }
+
     body .ct-container .container, body .ct-container-narrow .container {
         padding: 0;
     }
+
     section {
         padding-top: 60px;
         padding-bottom: 60px;
     }
+
     .buttons-list {
         flex-direction: column;
     }
+
     .buttons-list .buttons-list__btn, .buttons-list .buttons-list__btn .button {
-        width:100%;
+        width: 100%;
     }
+
     .post p:not(:last-of-type) {
         margin-bottom: .6rem;
     }
+
     .post blockquote {
         padding: 20px 16px;
         padding-inline-start: 24px !important;
         border-radius: 16px;
     }
+
     .post blockquote p {
         font-size: 16px;
     }
-  
+
 }
-@media (max-width:439px) {     
+
+@media (max-width:439px) {
     section.top-block {
         padding-top: 40px;
         padding-bottom: 30px;
     }
+
     .post h2 {
         font-size: 18px;
     }
+
     .post blockquote p {
         font-size: 15px;
     }
+
     body, body p {
         font-size: 15px;
     }

@@ -73,6 +73,7 @@ body .hero-wrapper__description p {
     font-weight: 600;
     text-transform: uppercase;
     display: inline-block;
+    animation: 1s ease-in 1s infinite alternate slide-top-down;
 }
 .hero-wrapper__link::before, .hero-wrapper__link::after {
     content: "";

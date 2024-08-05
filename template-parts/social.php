@@ -19,7 +19,7 @@ if( $socials['whatsapp'] || $socials['telegram'] || $socials['vk'] || $socials['
 
         if( $socials['telegram'] ) { ?>
             <li class="social__item">
-                <a href="https://t.me/+7<?php echo $socials['telegram']; ?>" target="_blank" class="social__link telegram">								
+                <a href="https://t.me/<?php echo $socials['telegram']; ?>" target="_blank" class="social__link telegram">								
                 </a>
             </li>
         <?php };

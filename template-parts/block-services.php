@@ -43,12 +43,31 @@ if ($query_services->have_posts() )  { ?>
 
             <ul class="services-block__list services-list d-grid">
                 <?php
-                if ($query_services->have_posts() )  { ?>
-                <?php while ( $query_services->have_posts() ) : $query_services->the_post(); 
+                if ($query_services->have_posts() )  { 
+                    $i = 0;
+                while ( $query_services->have_posts() ) : $query_services->the_post(); 
                 $service_listing_icon = get_field('service_listing_icon'); 
+                $index = $i++;
                 ?>
 
-                    <li class="services-list__item services-item" style="background-image:url( <?php echo $service_listing_icon['url']; ?> );">
+                    <li class="services-list__item services-item" style="background-image:url( <?php echo $service_listing_icon['url']; ?> );"
+                        data-aos="fade-<?php
+                        if($index == 0 || $index == 3) echo 'right';
+                        if($index == 1) echo 'down';
+                        if($index == 4) echo 'up';
+                        if($index == 2 || $index == 5) echo 'left';
+                        ?>"
+                        data-aos-offset=<?php
+                        if($index == 0 || $index == 1 || $index == 2) echo '50';
+                        if($index == 3 || $index == 4 || $index == 5) echo '150';
+                        ?>
+                        data-aos-delay="<?php echo 100 * ($index * 2); ?>"
+                        data-aos-duration="1200"
+                        data-aos-easing="ease-in-out"
+                        data-aos-mirror="true"
+                        data-aos-once="true"
+                        data-aos-anchor-placement="top"
+                    >
                         <div class="services-item__wrap d-flex flex-column justify-content-between">
                             <h3 class="services-item__title">
                                 <?php the_title(); ?>

@@ -14,7 +14,7 @@ if( $socials['telegram'] || $socials['whatsapp'] || $phone_num ) {
         <?php
         if( $socials['telegram'] ) { ?>
             <li class="buttons-list__btn">
-                <a href="@<?php echo $socials['telegram']; ?>" target="blank" class="button red-btn">Написать в Telegram</a>
+                <a href="https://t.me/<?php echo $socials['telegram']; ?>" target="blank" class="button red-btn">Написать в Telegram</a>
             </li>
         <?php }
 

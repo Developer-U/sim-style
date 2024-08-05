@@ -21,7 +21,14 @@ get_template_part('template-parts/top', 'block');
     <div class="container">
         <?php
         if( $phone_num ) { ?>	
-            <div class="footer-top__block contacts-block">
+            <div class="footer-top__block contacts-block"
+                data-aos="fade-up"
+                data-aos-delay="50"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+                data-aos-once="true"
+                data-aos-anchor-placement="center top"
+            >
                 <p>
                     Тел. / WhatsApp / Telegram
                 </p>                        
@@ -31,7 +38,15 @@ get_template_part('template-parts/top', 'block');
             </div>
         <?php }
         if( $email ) { ?>	
-            <div class="footer-top__block contacts-block">
+            <div class="footer-top__block contacts-block"
+                data-aos="fade-up"
+                data-aos-delay="200"
+                data-aos-offset="100"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+                data-aos-once="true"
+                data-aos-anchor-placement="center top"
+            >
                 <p>
                     Email
                 </p>           		

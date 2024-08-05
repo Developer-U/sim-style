@@ -34,14 +34,22 @@ get_header();
                     <?php echo $main_description; ?>
                 </div>
 
-                <button class="button red-btn hero-wrapper__btn">
+                <a class="button red-btn hero-wrapper__btn" href="/quizle/rasschitat-stoimost-razrabotki/">    
                     Рассчитать стоимость
-                </button>
+                </a>
             </div>
         </div>
 
         <?php if( $author_photo ) { ?>
-            <div class="hero__author position-relative position-md-absolute">
+            <div class="hero__author position-relative position-md-absolute"
+                    data-aos="fade-left"
+                    data-aos-offset="0"
+                    data-aos-delay="0"
+                    data-aos-duration="1400"
+                    data-aos-easing="linear"           
+                    data-aos-once="true" 
+                    data-aos-anchor-placement="top-center"
+                >
                 <figure class="position-relative">
                     <img src="<?php echo $author_photo['url']; ?>" alt="<?php echo $author_photo['alt']; ?>">
 
@@ -60,7 +68,7 @@ get_header();
             </div>
         <?php } ?>
 
-        <a href="#" class="hero-wrapper__link position-absolute d-none d-lg-inline-block">тарифы</a>
+        <a href="#tariffes" class="hero-wrapper__link position-absolute d-none d-lg-inline-block js-slideTo">тарифы</a>
     </section>
 
     <!-- Block Services -->

@@ -9,6 +9,8 @@ function my_scripts_method(){
 	wp_enqueue_style('bootstrap_css');
 	wp_register_style( 'simplebar_css', 'https://unpkg.com/simplebar@latest/dist/simplebar.css' );
 	wp_enqueue_style('simplebar_css');
+	wp_register_style( 'aos_css', 'https://unpkg.com/aos@2.3.1/dist/aos.css' );
+	wp_enqueue_style('aos_css');
 	wp_enqueue_style( 'global', get_stylesheet_directory_uri() . '/assets/css/global.css', array(), null, 'all');
     wp_enqueue_style( 'social', get_stylesheet_directory_uri() . '/assets/css/social.css', array(), null, 'all');
     wp_enqueue_style( 'menu', get_stylesheet_directory_uri() . '/assets/css/menu.css', array(), null, 'all');
@@ -22,6 +24,8 @@ function my_scripts_method(){
 	wp_enqueue_script('bootstrap_js');
 	wp_register_script( 'simplebar_js', 'https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js', null, null, true );
 	wp_enqueue_script('simplebar_js');
+	wp_register_script( 'aos_js', 'https://unpkg.com/aos@2.3.1/dist/aos.js', null, null, true );
+	wp_enqueue_script('aos_js');
 	wp_enqueue_script( 'main-js', get_stylesheet_directory_uri() . '/assets/js/main.js', array(), null, true );
 	wp_enqueue_script( 'player-js', get_stylesheet_directory_uri() . '/assets/js/youtube_player.js', array(), null, true );
 	wp_enqueue_script( 'reviews-js', get_stylesheet_directory_uri() . '/assets/js/reviews.js', array(), null, true );

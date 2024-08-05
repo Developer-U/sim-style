@@ -12,8 +12,7 @@
 
             
       const heightOfContent = content.getBoundingClientRect().height; // вычисляем высоту текста
-
-      console.log(heightOfContent);
+      
 
       if(heightOfContent >= 110) { // если высота становится более 101px, добавляем кнопку читать далее                  
           

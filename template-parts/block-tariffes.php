@@ -30,22 +30,22 @@ $query_web_type = new WP_Query($arg_web_type);
 if ($query_web_type->have_posts()) {
     ?>
 
-    <section class="
+    <section id="tariffes" class="
         <?php if (!is_single()) {
             ; ?>tariffs dark<?php } else { ?>tariffs dark singular<?php } ?>">
         <div class="container">
-            <?php if (!is_singular() && $tariffs_block_title) { ?>
+            <?php if (!is_single() && $tariffs_block_title) { ?>
                 <h2>
                     <?php echo $tariffs_block_title; ?>
                 </h2>
-            <?php } else if (is_singular() && $tariffes_block_singular_title) { ?>
+            <?php } else if (is_single() && $tariffes_block_singular_title) { ?>
                     <h2>
                     <?php echo $tariffes_block_singular_title; ?>
                     </h2>
             <?php } else if (is_archive('works')) { ?>
-                    <h2>
-                        Сколько стоит разработка сайта?
-                    </h2>
+                        <h2>
+                            Сколько стоит разработка сайта?
+                        </h2>
             <?php } ?>
 
             <ul class="tariffs__list tariffs-list d-grid grid-four">
@@ -60,7 +60,7 @@ if ($query_web_type->have_posts()) {
                         <li class="reviews-item tariffs-list__item d-grid js-item" data-name="<?php the_title(); ?>">
                             <div class="tariffs-list__top">
                                 <a class="tariffs-list__get" href="<?php the_permalink(); ?>">
-                                    <h3 class="tariffs-list__title js-title" >
+                                    <h3 class="tariffs-list__title js-title">
                                         <?php the_title(); ?>
                                     </h3>
                                 </a>
@@ -69,7 +69,7 @@ if ($query_web_type->have_posts()) {
                                     <?php the_excerpt(); ?>
                                 </div>
 
-                                <?php if($web_price) { ?>
+                                <?php if ($web_price) { ?>
                                     <h3 class="tariffs-list__title tariffs-list__title_price">
                                         <?php echo $web_price; ?>&nbsp;₽
                                     </h3>
@@ -103,7 +103,14 @@ if ($query_web_type->have_posts()) {
                 <?php }
 
                 if ($tariffs_block_cta_image) { ?>
-                    <div class="tariffes__cta tariffes-cta d-grid align-items-center">
+                    <div class="tariffes__cta tariffes-cta d-grid align-items-center"
+                        data-aos="fade-left"
+                        data-aos-delay="50"
+                        data-aos-duration="1200"
+                        data-aos-easing="ease-in-out"
+                        data-aos-once="true"
+                        data-aos-anchor-placement="center top"
+                    >
                         <figure class="tariffes-cta__image">
                             <img src="<?php echo $tariffs_block_cta_image['url']; ?>"
                                 alt="<?php echo $tariffs_block_cta_image['alt']; ?>">

@@ -59,7 +59,7 @@ if ($query_works->have_posts()) { ?>
             </ul>
 
             <?php if (!is_archive('works')) { ?>
-                <a href="#" class="button transparent-btn">смотреть все работы</a>
+                <a href="/works/" class="button transparent-btn">смотреть все работы</a>
             <?php } ?>
         </div>
     </section>

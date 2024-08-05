@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', function(){
+window.addEventListener('DOMContentLoaded', function(){    
     const availableScreenWidth = window.screen.availWidth; 
 
     const form_wrappers = document.querySelectorAll('.cta-wrapper');
@@ -10,14 +10,32 @@ window.addEventListener('DOMContentLoaded', function(){
             form_btn.value = 'Получить предложение';
         }
     });
+    
+    AOS.init();
 
     /*Inputmask*/
 
-    var selectors = document.querySelectorAll('input[type="tel"]');
+    var selectors = document.querySelectorAll('input[type="tel"].input-form');
 
     selectors.forEach(function(selector){
       var im = new Inputmask("+7(999)-999-9999");
       im.mask(selector);
     });
 
+    /*-----Скроллинг плавный------*/ 
+    jQuery( function( $ ){
+        $('.js-slideTo').on('click', function(e){
+            event.preventDefault();
+
+            let href = $(this).attr('href');
+
+            let headerHeight = $('.header').height();
+
+            let offset = $(href).offset().top - headerHeight;
+
+            $('body, html').animate({
+            scrollTop: offset,
+            }, 800);
+        });
+    });
 });

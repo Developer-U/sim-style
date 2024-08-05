@@ -37,7 +37,14 @@ $btns_type = get_field('btns_type_text_image', $page_id);
                     </h2>
                 <?php } ?>
 
-                <div class="text-image__text post">
+                <div class="text-image__text post"
+                    data-aos="fade-right"
+                    data-aos-offset="200"
+                    data-aos-delay="0"
+                    data-aos-duration="1200"
+                    data-aos-easing="ease-in"           
+                    data-aos-once="true"             
+                >
                     <?php echo $block_text; ?>
                 </div>
 

@@ -26,7 +26,14 @@ if( have_rows('new_work_level', 'options') ) {
                 $index = $i++; // Создаём счётчик
                 ?>
 
-                    <li class="levels-list__item levels-item position-relative <?php if( $index == 0 || ($index % 2) == 0 ) {?>up<?php } ?>">
+                    <li class="levels-list__item levels-item position-relative <?php if( $index == 0 || ($index % 2) == 0 ) {?>up<?php } ?>"
+                        data-aos="fade-left"
+                        data-aos-delay="<?php echo 100 * ($index * 2.5); ?>"
+                        data-aos-duration="1000"
+                        data-aos-easing="ease-in-out"
+                        data-aos-once="true"
+                        data-aos-anchor-placement="top"
+                    >
                         <div class="levels-item__circle position-absolute"></div>
 
                         <div class="levels-item__wrapper position-relative">

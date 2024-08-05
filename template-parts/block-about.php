@@ -24,12 +24,26 @@ $block_about_image = get_field('block_about_image', $page_id);
         <div class="container"> 
             <div class="text-image__wrap">
                 <?php if($block_about_title) { ?>
-                    <h2>
+                    <h2
+                        data-aos="fade-left"
+                        data-aos-delay="50"
+                        data-aos-duration="1000"
+                        data-aos-easing="ease-in-out"
+                        data-aos-once="true"
+                        data-aos-anchor-placement="center top"
+                    >
                         <?php echo $block_about_title; ?>
                     </h2>
                 <?php } ?>
 
-                <div class="text-image__text post">
+                <div class="text-image__text post"
+                    data-aos="fade-left"
+                    data-aos-delay="500"
+                    data-aos-duration="1000"
+                    data-aos-easing="ease-in-out"
+                    data-aos-once="true"
+                    data-aos-anchor-placement="center top"
+                >
                     <?php echo $block_about_text; ?>
                 </div>
 

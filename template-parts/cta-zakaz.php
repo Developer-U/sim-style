@@ -17,7 +17,15 @@ $cta_block_title = get_field('cta_block_title', $page_type);
 $cta_block_images = get_field('cta_block_images', $page_type); 
 ?>
 
-    <section class="cta-block">
+    <section class="cta-block"
+        data-aos="fade-up"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        data-aos-once="false"
+        data-aos-mirror="true"
+        data-aos-anchor-placement="center top"
+    >
         <div class="container">
             <?php if( $cta_block_title ) { ?>
                 <h2>

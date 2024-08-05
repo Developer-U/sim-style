@@ -7,7 +7,7 @@ $reviews_post = get_field('reviews_post');
 ?>
 
 <li class="reviews-item position-relative js-reviews">
-    <div class="reviews-item__top reviews-top d-flex gap-2 gap-sm-3">
+    <div class="reviews-item__top reviews-top d-flex gap-2 gap-sm-3">    
         <figure class="reviews-top__image" style="background: #ddd;">
             <?php
             if( has_post_thumbnail() ) {              
