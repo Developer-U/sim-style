@@ -39,7 +39,11 @@
                         </a>                     
 
                         <a href="<?php the_permalink(); ?>" class="sidebar-posts__link">
-                            <?php the_title(); ?>
+                            
+                            <?php
+                            $thetitle = get_the_title(); // Изначальный заголовок
+                            echo wp_trim_words( $thetitle, 8); // Обрезаем до 8 слов                       
+                            ?>
                         </a>                        
                     </li>
                 <?php

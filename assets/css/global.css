@@ -26,11 +26,18 @@ body p {
     margin-bottom: inherit;
 }
 
-body, body p {
+body,
+body p {
     font-size: 18px;
 }
 
-body, body p, body h1, body h2, body h3, body h4, body span {
+body,
+body p,
+body h1,
+body h2,
+body h3,
+body h4,
+body span {
     line-height: 140%;
 }
 
@@ -52,7 +59,8 @@ figure img {
     color: var(--blue);
 }
 
-body ul, body li {
+body ul,
+body li {
     list-style-type: none;
     padding-left: 0;
     margin-bottom: inherit;
@@ -119,7 +127,11 @@ section.top-block.single span.overlay {
     height: 100%;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, .35);
+    background: rgba(0, 0, 0, .55);
+}
+
+body form input.input-form:focus {
+    background: rgba(255, 255, 255, 0.8);
 }
 
 .closed {
@@ -127,7 +139,8 @@ section.top-block.single span.overlay {
     height: 100vh;
 }
 
-button, a.button {
+button,
+a.button {
     width: fit-content;
     display: flex;
     align-items: center;
@@ -137,7 +150,10 @@ button, a.button {
     transition: all .25s ease-in-out;
 }
 
-button:hover, a.button:hover, button:focus, a.button:focus {
+button:hover,
+a.button:hover,
+button:focus,
+a.button:focus {
     transition: all .25s ease-in-out;
 }
 
@@ -153,30 +169,39 @@ body .transparent-btn {
     color: var(--red);
 }
 
-body button.red-btn:hover, body a.button.red-btn:hover, body button.red-btn:focus, body a.button.red-btn:focus {
+body button.red-btn:hover,
+body a.button.red-btn:hover,
+body button.red-btn:focus,
+body a.button.red-btn:focus {
     background-color: var(--dark-red);
     border-color: var(--dark-red);
     color: var(--white);
 }
 
-body button.red-btn:active, body a.button.red-btn:active {
+body button.red-btn:active,
+body a.button.red-btn:active {
     background-color: var(--red-hover);
     border-color: var(--red-hover);
 }
 
-.post p:not(:last-of-type), .post ul, .post ol {
+.post p:not(:last-of-type),
+.post ul,
+.post ol {
     margin-bottom: 1.5rem;
 }
 
-.post ul, .post ol {
+.post ul,
+.post ol {
     padding-left: 40px;
 }
 
-.post.work-process__text ol, .post.work-process__text ul {
+.post.work-process__text ol,
+.post.work-process__text ul {
     padding-left: 24px;
 }
 
-.post.work-process__text ol li, .post.work-process__text ul li {
+.post.work-process__text ol li,
+.post.work-process__text ul li {
     margin-bottom: 12px;
 }
 
@@ -229,7 +254,8 @@ body button.red-btn:active, body a.button.red-btn:active {
     gap: 30px;
 }
 
-.page-numbers li span, .page-numbers li a {
+.page-numbers li span,
+.page-numbers li a {
     font-weight: bold;
     color: var(--black);
 }
@@ -258,7 +284,9 @@ body button.red-btn:active, body a.button.red-btn:active {
 }
 
 @media (max-width:1675px) {
-    body, body p {
+
+    body,
+    body p {
         font-size: 16px;
     }
 
@@ -274,7 +302,8 @@ body button.red-btn:active, body a.button.red-btn:active {
         margin-bottom: 1.2rem;
     }
 
-    button, a.button {
+    button,
+    a.button {
         font-size: 16px;
     }
 
@@ -313,7 +342,9 @@ body button.red-btn:active, body a.button.red-btn:active {
 }
 
 @media (max-width:1199px) {
-    button, a.button {
+
+    button,
+    a.button {
         font-size: 15px;
         padding: 2px 11px;
     }
@@ -403,11 +434,14 @@ body button.red-btn:active, body a.button.red-btn:active {
 }
 
 @media (max-width:689.98px) {
-    body .ct-container, body .ct-container-narrow {
+
+    body .ct-container,
+    body .ct-container-narrow {
         width: calc(100% - 32px);
     }
 
-    body .ct-container .container, body .ct-container-narrow .container {
+    body .ct-container .container,
+    body .ct-container-narrow .container {
         padding: 0;
     }
 
@@ -420,7 +454,8 @@ body button.red-btn:active, body a.button.red-btn:active {
         flex-direction: column;
     }
 
-    .buttons-list .buttons-list__btn, .buttons-list .buttons-list__btn .button {
+    .buttons-list .buttons-list__btn,
+    .buttons-list .buttons-list__btn .button {
         width: 100%;
     }
 
@@ -454,7 +489,8 @@ body button.red-btn:active, body a.button.red-btn:active {
         font-size: 15px;
     }
 
-    body, body p {
+    body,
+    body p {
         font-size: 15px;
     }
 }
