@@ -10,6 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $phone_num = get_field('tel', 'options');
 $tel = str_replace([' ', '(', ')', '-', '+7'], '',  $phone_num);
 $email = get_field('email', 'options');
+$address = get_field('address', 'options');
 
 get_header();
 
@@ -54,7 +55,26 @@ get_template_part('template-parts/top', 'block');
                     <?php echo $email; ?>
                 </a>
             </div>
-        <?php } ?>
+        <?php }       
+        if( $address ) { ?>	
+            <div class="footer-top__block contacts-block"
+                data-aos="fade-up"
+                data-aos-delay="300"
+                data-aos-offset="100"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+                data-aos-once="true"
+                data-aos-anchor-placement="center top"
+            >
+                <p>
+                    Офис
+                </p>           		
+                <p class="header__tel header__tel_footer" >
+                    <b><?php echo $address; ?></b>
+                </p>
+            </div>
+        <?php }        
+        ?>
     </div>
 </section>
 

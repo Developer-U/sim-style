@@ -272,6 +272,31 @@ body ul li.portfolio-item {
     list-style-type: none;
 }
 
+.item-block__link {
+    position: absolute;
+    top: 16px;
+    right: 12px;
+    color: var(--black);
+    padding: 1px 10px;
+    background-color: #fff;
+    z-index: 1;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 4px;
+}
+
+a.item-block__link:hover {
+    color: var(--black);
+    background-color: #fff;
+}
+a.single__web {
+    color: var(--blue);
+    text-decoration: underline;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 1rem;
+}
+
 /*Portfolio listing content end*/
 
 

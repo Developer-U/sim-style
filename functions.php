@@ -55,6 +55,11 @@ require get_stylesheet_directory() . '/includes/duplicate-types.php';
  */
 require get_stylesheet_directory() . '/includes/gutenberg-blocks.php';
 
+/*
+ * Шорткоды
+ */
+require get_stylesheet_directory() . '/includes/shortcodes.php';
+
 add_filter( 'jpeg_quality', function() {
     return 100;
 } );

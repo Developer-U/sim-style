@@ -34,11 +34,18 @@ if (
 // Block Top
 get_template_part('template-parts/top', 'block');
 $process_creation = get_field('process_creation');
+$website_link = get_field('website_link');
 ?>
 
 <section class="single">
     <div class="container">
         <div class="post">
+            <?php
+            if($website_link) {
+                echo '<a class="single__web" href=" '. $website_link . '" target="_blank" >';
+                echo 'посмотреть сайт';
+                echo '</a>';             
+            } ?>
             <?php the_content(); ?>
         </div>
         

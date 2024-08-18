@@ -9,6 +9,7 @@ if (!defined('ABSPATH')) {
 }
 $page_id = get_the_ID();
 $archive_description = get_field('archive_description_' .$page_id,'options');
+$page_title = get_field('page_title', $page_id);
 
 if (is_single()) { ?>
     <section class="top-block single position-relative"
@@ -52,7 +53,13 @@ if (is_single()) { ?>
 
             } else { ?>
                     <h1 class="top-block__title">
-                    <?php the_title(); ?>
+                    <?php 
+                    if(is_page('about') ){
+                        echo $page_title;
+                    } else {
+                        the_title();
+                    }
+                     ?>
                     </h1>
 
                 <?php get_template_part('template-parts/block', 'breadcrumbs');

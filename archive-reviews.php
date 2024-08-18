@@ -11,6 +11,8 @@ add_filter( 'get_the_archive_title', function( $title ){
 	return preg_replace('~^[^:]+: ~', '', $title );
 });
 
+$reviews_seo_tekst = get_field('reviews_seo_tekst', 'options');
+
 get_header();
 ?>
 
@@ -21,8 +23,12 @@ get_header();
     <?php get_template_part('template-parts/block', 'reviews'); ?>
 
     <!-- Block Services -->
-    <?php get_template_part('template-parts/block', 'portfolio'); ?>
+    <?php get_template_part('template-parts/block', 'portfolio');
    
-
+    if ($reviews_seo_tekst) { 
+        echo '<div class="container seo-text">';
+        echo '<div class="post">' .$reviews_seo_tekst. '</div>';
+        echo '</div>';
+    } ?>
 <?php
 get_footer();

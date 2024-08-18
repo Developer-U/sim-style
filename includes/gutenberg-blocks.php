@@ -69,8 +69,8 @@ function be_register_blocks() {
             // Specifying a dashicon for the block
             'src' => 'money-alt',
         ),
-        'mode'			=> 'preview',
-        'keywords'		=> array( 'profile', 'user', 'author' )
+        'mode'			=> 'edit',
+        'keywords'		=> array( 'quote', 'mention', 'cite' )
     ));
 
 

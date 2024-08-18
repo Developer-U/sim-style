@@ -27,7 +27,9 @@ body p {
 }
 
 body,
-body p {
+body p,
+body ul li,
+body ol li {
     font-size: 18px;
 }
 
@@ -137,6 +139,10 @@ body form input.input-form:focus {
 .closed {
     overflow-y: hidden;
     height: 100vh;
+}
+
+.seo-text {
+    padding-bottom: 80px;
 }
 
 button,
@@ -286,7 +292,9 @@ body a.button.red-btn:active {
 @media (max-width:1675px) {
 
     body,
-    body p {
+    body p,
+    body ul li,
+    body ol li {
         font-size: 16px;
     }
 
@@ -372,6 +380,14 @@ body a.button.red-btn:active {
 
     .post h2 {
         font-size: 22px;
+    }
+}
+
+@media (max-width:991px) {
+
+    body,
+    html {
+        overflow-x: hidden;
     }
 }
 
@@ -473,6 +489,10 @@ body a.button.red-btn:active {
         font-size: 16px;
     }
 
+    .seo-text {
+        padding-bottom: 60px;
+    }
+
 }
 
 @media (max-width:439px) {
@@ -490,7 +510,9 @@ body a.button.red-btn:active {
     }
 
     body,
-    body p {
+    body p,
+    body ul li,
+    body ol li {
         font-size: 15px;
     }
 }

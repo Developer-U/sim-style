@@ -13,15 +13,11 @@ $service_block_image = get_field('service_block_image');
 ?>
 
 <article class="cta-wrapper gutenberg d-grid">
-    <div class="cta-wrapper__left">
-        <?php if ($service_block_title) { ?>
-            <h2 class="cta-wrapper__title">
-                <?php echo $service_block_title; ?>
-            </h2>
-        <? } ?>
+    <div class="cta-wrapper__left">       
+        
 
         <h3 class="cta-wrapper__subtitle">
-            Закажите&nbsp;<?php the_title(); ?>&nbsp;уже сегодня!
+            Закажите услугу:&nbsp;<?php the_title(); ?>&nbsp;уже сегодня!
         </h3>
 
         <div class="cta-wrapper__form">

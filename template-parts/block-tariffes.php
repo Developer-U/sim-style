@@ -69,7 +69,8 @@ if ($query_web_type->have_posts()) {
                                     <?php the_excerpt(); ?>
                                 </div>
 
-                                <?php if ($web_price) { ?>
+                                <?php                               
+                                if ($web_price) { ?>
                                     <h3 class="tariffs-list__title tariffs-list__title_price">
                                         <?php echo $web_price; ?>&nbsp;₽
                                     </h3>
