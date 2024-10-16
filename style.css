@@ -106,6 +106,56 @@ body .hero-wrapper__description p {
     right: -22px;
 }
 
+.hero__bg {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.hero-slider {
+    height: 100%;
+}
+
+.hero-slider__slide {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.hero__box {
+    position: relative;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    padding-top: 14vh;
+    padding-bottom: 100px;
+    min-height: 72vh;
+}
+
+.hero-slider-wrapper {
+    grid-template-columns: calc(45% - 60px) 55%;
+    width: 100%;
+    gap: 60px;
+    margin-bottom: 3rem;
+}
+
+section.hero h1.hero-slider-wrapper__title {
+    font-size: 3.3vw;
+}
+
+body .hero-slider-wrapper__description p {
+    font-size: 24px;
+    font-weight: 200;
+    margin-bottom: 1.5rem;
+}
+
+body .text-image__text .post ul li {
+    font-size: 20px;
+    margin-bottom: 1rem;
+}
+
 /*Hero main end */
 
 /*Services block*/
@@ -224,6 +274,10 @@ body .button.services-list__btn::after {
     height: 343px;
 }
 
+section.portfolio-block {
+    border-top: 1px solid #ccc;
+}
+
 .portfolio-block__list {
     margin-bottom: 1.5rem;
 }
@@ -289,6 +343,7 @@ a.item-block__link:hover {
     color: var(--black);
     background-color: #fff;
 }
+
 a.single__web {
     color: var(--blue);
     text-decoration: underline;
@@ -305,6 +360,11 @@ a.single__web {
     margin-bottom: 2.5rem;
 }
 
+.reviews-video {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
 body ul li.reviews-item {
     margin-bottom: 0;
     padding: 30px 40px 24px;
@@ -317,14 +377,14 @@ body ul li.reviews-item p {
 }
 
 .reviews-top__title {
-    font-size: 20px;
-    margin-bottom: 14px;
+    font-size: 16px;
+    margin-bottom: 2px;
 }
 
 .reviews-top__right>p {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 120%;
-    margin-bottom: 7px;
+    margin-bottom: 10px;
 }
 
 .reviews-top__right * {
@@ -332,7 +392,7 @@ body ul li.reviews-item p {
 }
 
 .reviews-top__right h5 {
-    font-size: 16px;
+    font-size: 14px;
     margin-bottom: 0;
 }
 
@@ -348,10 +408,12 @@ body ul li.reviews-item p {
     border-radius: 50%;
 }
 
-.web-list>a {
+.web-list>a, section.dark .web-list>a {
     font-size: 16px;
     line-height: 120%;
     display: block;
+    color: #CCCCFF;
+    text-decoration: underline;
 }
 
 .reviews-item__top {
@@ -965,6 +1027,28 @@ button.blog-btn {
 
 /*Single end*/
 
+/*Gallery block*/
+
+.gallery-block-list {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.post ul.gallery-block-list {
+    padding-left: 0;
+}
+
+.post ul.gallery-block-list li {
+    list-style-type: none;
+}
+
+.gallery-block-list li a {
+    display: block;
+    overflow: hidden;
+    height: 100%;
+}
+
+/*Gallery block end*/
 
 /*Media*/
 
@@ -1225,6 +1309,10 @@ button.blog-btn {
         width: 184px;
     }
 
+    .web-list>a, section.dark .web-list>a {
+        font-size: 14px;
+    }
+
     .single-post h1.top-block__title {
         font-size: 30px;
     }
@@ -1330,6 +1418,10 @@ button.blog-btn {
         height: 72%;
         top: auto;
         bottom: 0;
+    }
+
+    .web-list>a, section.dark .web-list>a {
+        margin-bottom: 8px;
     }
 
     .single-post h1.top-block__title {
@@ -1498,6 +1590,10 @@ button.blog-btn {
     .blog-tabs {
         flex-wrap: wrap;
     }
+
+    .gallery-block-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 @media (max-width:930px) and (max-height: 420px) {
@@ -1563,13 +1659,12 @@ button.blog-btn {
     }
 
     .reviews-top__title {
-        font-size: 17px;
-        margin-bottom: 7px;
+        font-size: 14px;
     }
 
     .reviews-top__right h5,
     .web-list>a {
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .reviews-item__top {
@@ -1686,13 +1781,16 @@ button.blog-btn {
     }
 
     .reviews-top__title {
-        font-size: 17px;
-        margin-bottom: 7px;
+        font-size: 13px;
+    }
+
+    .reviews-video {
+        grid-template-columns: 1fr;
     }
 
     .reviews-top__right h5,
     .web-list>a {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .reviews-item__top {
@@ -1887,6 +1985,11 @@ button.blog-btn {
 
     .single-post h1.top-block__title {
         font-size: 24px;
+    }
+
+    .gallery-block-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
     }
 }
 

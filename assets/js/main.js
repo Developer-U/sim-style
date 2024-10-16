@@ -1,4 +1,9 @@
-window.addEventListener('DOMContentLoaded', function(){    
+window.addEventListener('DOMContentLoaded', function(){ 
+    /*Fancybox Gallery*/
+    Fancybox.bind("[data-fancybox]", {
+        hideScrollbar: false,
+    });
+      
     const availableScreenWidth = window.screen.availWidth; 
 
     const form_wrappers = document.querySelectorAll('.cta-wrapper');
@@ -9,7 +14,7 @@ window.addEventListener('DOMContentLoaded', function(){
         if(availableScreenWidth < 768) {
             form_btn.value = 'Получить предложение';
         }
-    });
+    });     
     
     AOS.init();
 

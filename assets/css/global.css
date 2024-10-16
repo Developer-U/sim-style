@@ -213,6 +213,7 @@ body a.button.red-btn:active {
 
 .post ul li {
     list-style-type: disc;
+    margin-bottom: 10px;
 }
 
 .post ol li {

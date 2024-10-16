@@ -42,42 +42,40 @@ $archive_post_description = get_field('archive_post_description', 'options');
 		<div class="blog__main">
 			<!-- Категории постов -->
 			<?php
-			get_template_part('template-parts/article', 'tabs');
 
-			$current = get_query_var('paged') ? get_query_var('paged') : 1;
-			$blog_args = array(
-				'post_type' => 'post',
-				'posts_per_page' => 6,
-				'paged' => $current,
-				'orderby' => 'date',
-				'order' => 'DESC',
-			);
+		
 
-			$blog_query = new WP_Query($blog_args);
-			?>
+			if (have_posts()):
+				get_template_part('template-parts/article', 'tabs');
+				?>
 
-			<div class="blog-main__content archive-content">
+				<div class="blog-main__content archive-content">
+					<?php
+					// while ($blog_query->have_posts()):
+					// 	$blog_query->the_post();
+					while (have_posts()):
+						the_post();
+						get_template_part('template-parts/article', 'content');
+					endwhile;
+
+					wp_reset_query(); ?>
+				</div>
+
 				<?php
-				while ($blog_query->have_posts()):
-					$blog_query->the_post();
-					get_template_part('template-parts/article', 'content');
-				endwhile;		
+				$args = [
+					'prev_next' => true,
+					'prev_text' => __('&#8592'),
+					'next_text' => __('&#8594'),
+					'end_size' => 2,
+					'mid_size' => 2,
+					'type' => 'list',
+					'class' => 'page-numbers',
+				];
 
-				wp_reset_postdata(); ?>
-			</div>
+				the_posts_pagination($args);
 
-			<?php
-			$args = [
-				'prev_next' => true,
-				'prev_text' => __('&#8592'),
-				'next_text' => __('&#8594'),
-				'end_size' => 2,
-				'mid_size' => 2,
-				'type' => 'list',
-				'class' => 'page-numbers',
-			];
-			
-			the_posts_pagination( $args );			
+			endif;
+
 			?>
 		</div>
 	</div>

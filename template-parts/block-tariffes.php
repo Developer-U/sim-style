@@ -96,7 +96,7 @@ if ($query_web_type->have_posts()) {
                 <?php } ?>
             </ul>
 
-            <?php if (is_front_page()) {
+            <?php if (is_front_page() || is_page('webcreation')) {
                 if ($tariffs_block_text) { ?>
                     <div class="tariffs-list__cta tariffs-list__text post">
                         <?php echo $tariffs_block_text; ?>

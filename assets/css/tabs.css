@@ -1,0 +1,30 @@
+.js-targetTabs {
+    display: none;
+}
+
+.js-targetTabs.active {
+    display: block;
+}
+
+.tab-btns {
+    margin-bottom: 1rem;
+}
+
+.button.tab-btns__button.js-pathTabs {
+    background-color: transparent;
+    border-color: var(--white);
+    border-radius: 0;
+    padding: 6px 80px;
+    margin-bottom: 0;
+}
+
+.button.tab-btns__button.js-pathTabs.active {
+    background-color: rgba(255, 255, 255, .18);
+}
+
+@media (max-width:767px) {
+    .button.tab-btns__button.js-pathTabs {
+        padding: 6px 20px;
+        width: 50%;
+    }
+}

@@ -1,58 +1,66 @@
 <?php
 /*
-* Sidebar Post / Сайдбар на странице публикации
-*/
+ * Sidebar Post / Сайдбар на странице публикации
+ */
 
 ?>
 
-    <aside class="content">
-        <h3 class="sidebar__heading">      
-            Другие публикации
-        </h3>
+<aside class="content">
+    <h3 class="sidebar__heading">
+        Другие публикации
+    </h3>
 
-        <ul class="sidebar__post sidebar-post">
-            <?php 
-            $id = get_the_id();
-            $args_sidebar_post = array(
-                'posts_per_page' => 6,
-                'post_type' => 'post',
-                'orderby'  => 'date',
-                'order' => 'DESC',
-                'post__not_in' => array( $id ), // Исключим текущий пост
-            );           
+    <ul class="sidebar__post sidebar-post">
+        <?php 
 
-            $query_sidebar_post = new WP_Query( $args_sidebar_post );        
+// add_action( 'pre_get_posts', 'turn_off_sticky' );
+ 
+function turn_off_sticky( $query ) {
+	$query->set( 'ignore_sticky_posts', true );
+}
 
-            if ( $query_sidebar_post->have_posts() ) {
-                while ( $query_sidebar_post->have_posts() ) {
-                    $query_sidebar_post->the_post();
-                    ?>                   
+        $id = get_the_id();
+        $args_sidebar_post = array(
+            'posts_per_page' => 6,
+            'post_type' => 'post',
+            'orderby' => 'date',
+            'order' => 'DESC',
+            'post_status' => 'publish',
+            'post__not_in' => array($id), // Исключим текущий пост               
+        );
 
-                    <li class="sidebar-job__other d-grid">
-                        <a href="<?php the_permalink(); ?>" class="sidebar-posts__image">                     
-                            <?php
-                            if( has_post_thumbnail() ) { // условие, если есть миниатюра
-                                the_post_thumbnail(); // если параметры функции не указаны, то выводится миниатюра текущего поста, размер thumbnail
-                            } else {
-                                echo '<img src="' . get_stylesheet_directory_uri() . '/assets/img/cyberpank.jpeg" />'; // изображение по умолчанию, если миниатюра не установлена
-                            } ?>                    
-                        </a>                     
+        $query_sidebar_post = new WP_Query($args_sidebar_post);
 
-                        <a href="<?php the_permalink(); ?>" class="sidebar-posts__link">
-                            
-                            <?php
-                            $thetitle = get_the_title(); // Изначальный заголовок
-                            echo wp_trim_words( $thetitle, 8); // Обрезаем до 8 слов                       
-                            ?>
-                        </a>                        
-                    </li>
+        if ($query_sidebar_post->have_posts()) {
+            while ($query_sidebar_post->have_posts()) {
+                $query_sidebar_post->the_post(); 
+                ?>
+
+                <li class="sidebar-job__other d-grid">
+                    <a href="<?php the_permalink(); ?>" class="sidebar-posts__image">
+                        <?php
+                        if (has_post_thumbnail()) { // условие, если есть миниатюра
+                            the_post_thumbnail(); // если параметры функции не указаны, то выводится миниатюра текущего поста, размер thumbnail
+                        } else {
+                            echo '<img src="' . get_stylesheet_directory_uri() . '/assets/img/cyberpank.jpeg" />'; // изображение по умолчанию, если миниатюра не установлена
+                        } ?>
+                    </a>
+
+                    <a href="<?php the_permalink(); ?>" class="sidebar-posts__link">
+
+                        <?php
+                        $thetitle = get_the_title(); // Изначальный заголовок
+                        echo wp_trim_words($thetitle, 8); // Обрезаем до 8 слов                       
+                        ?>
+                    </a>
+                </li>
                 <?php
-                }
-            }        
-            
-            // Возвращаем оригинальные данные поста. Сбрасываем $post.
-            wp_reset_postdata(); ?>
+            }
+        }
 
-        </ul>
-      
-    </aside><!-- #secondary -->
+        // Возвращаем оригинальные данные поста. Сбрасываем $post.
+        wp_reset_postdata(); ?>
+
+    </ul>
+
+</aside><!-- #secondary -->

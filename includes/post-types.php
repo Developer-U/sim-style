@@ -105,16 +105,16 @@ function reviews()
 
   $args = array(
     'labels' => $labels,
-    'public' => true,
+    'public' => false,
     'menu_icon' => 'dashicons-format-status',
-    'publicly_queryable' => true,
+    'publicly_queryable' => false,
     'show_ui' => true,
     'show_in_menu' => true,
     'query_var' => true,
     'rewrite' => true,
     'capability_type' => 'post',
     'has_archive' => true,
-    'hierarchical' => true,
+    'hierarchical' => false,
     'menu_position' => 5,
     'supports' => array('title','editor','thumbnail', 'custom-fields'),
 
