@@ -17,7 +17,7 @@ if (!defined('ABSPATH')) {
                 if (has_post_thumbnail()) { // условие, если есть миниатюра
                     the_post_thumbnail('full'); // если параметры функции не указаны, то выводится миниатюра текущего поста, размер thumbnail
                 } else {
-                    echo '<img src="' . get_template_directory_uri() . '/assets/images/no-post-thumbnail.jpg" />'; // изображение по умолчанию, если миниатюра не установлена
+                    echo '<img src="' . get_stylesheet_directory_uri() . '/assets/img/no-post-thumbnail.jpg" />'; // изображение по умолчанию, если миниатюра не установлена
                 } ?>
             </div>
         </a>

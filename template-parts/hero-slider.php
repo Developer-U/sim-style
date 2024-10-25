@@ -14,7 +14,7 @@ $block_slider_text = get_field('block_slider_text', $page_id);
 <section class="hero position-relative" style="background-color:#191919">
     <div class="hero__bg"></div>
 
-    <div class="swiper hero-slider">
+    <div class="swiper hero-slider position-absolute">
         <div class="swiper-wrapper">
 
             <?php if (have_rows('dobavit_slide_hero', $page_id)) { ?>
@@ -35,8 +35,8 @@ $block_slider_text = get_field('block_slider_text', $page_id);
     </div>
 
     <div
-        class="ct-container hero__box d-flex flex-column justify-content-start justify-content-md-center justify-content-xl-end">
-        <div class="hero-slider__wrapper hero-slider-wrapper position-relative d-grid">
+        class="ct-container hero__box d-flex flex-column justify-content-center">
+        <div class="hero-slider-wrapper position-relative">
             <h1 class="hero-wrapper__title hero-slider-wrapper__title">
                 <?php the_title(); ?>
             </h1>

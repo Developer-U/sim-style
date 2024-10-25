@@ -71,6 +71,9 @@ get_header();
         <a href="#tariffes" class="hero-wrapper__link position-absolute d-none d-lg-inline-block js-slideTo">тарифы</a>
     </section>
 
+    <!-- Block main -->
+    <?php get_template_part('template-parts/block', 'three-items'); ?>
+
     <!-- Block Services -->
     <?php get_template_part('template-parts/block', 'services'); ?>
 
