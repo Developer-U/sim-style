@@ -59,6 +59,10 @@ figure img {
     object-fit: cover;
 }
 
+figure.icon img {
+    object-fit: contain;
+}
+
 .blue-text {
     color: var(--blue);
 }
@@ -94,6 +98,10 @@ section.tariffs.dark.singular h2 {
 section.single-works {
     padding-top: 0;
     padding-bottom: 0;
+}
+
+section.hero-black {
+    padding-top: 22vh;
 }
 
 section.publications {
@@ -202,6 +210,10 @@ body a.button.red-btn:active {
     margin-bottom: 1.5rem;
 }
 
+.post p:last-of-type {
+    margin-bottom: 0;
+}
+
 .post ul,
 .post ol {
     padding-left: 40px;
@@ -246,6 +258,11 @@ body a.button.red-btn:active {
 .grid-three {
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
+}
+
+.grid-two {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
 }
 
 .tariffs.singular .grid-four {
@@ -301,6 +318,12 @@ body a.button.red-btn:active {
     margin-bottom: 4rem;
 }
 
+@media (max-width:1785px) {
+    section.hero-black {
+        padding-top: 16vh;
+    }
+}
+
 @media (max-width:1675px) {
 
     body,
@@ -352,6 +375,11 @@ body a.button.red-btn:active {
         padding-bottom: 50px;
     }
 
+    section.hero-black {
+        padding-top: 13vh;
+        padding-bottom: 60px;
+    }
+
     body .post .wp-block-spacer[style="height:100px"] {
         height: 60px !important;
     }
@@ -390,6 +418,10 @@ body a.button.red-btn:active {
         height: 40px !important;
     }
 
+    body .post .wp-block-spacer[style="height:60px"] {
+        height: 30px !important;
+    }
+
     .post h2 {
         font-size: 22px;
     }
@@ -401,6 +433,14 @@ body a.button.red-btn:active {
     html {
         overflow-x: hidden;
     }
+
+    .post blockquote {
+        padding: 24px 60px;
+    }
+
+    .post blockquote p {
+        font-size: 17px;
+    }
 }
 
 @media (max-width:930px) and (max-height: 420px) {
@@ -409,13 +449,21 @@ body a.button.red-btn:active {
         padding-bottom: 60px;
     }
 
-    body, body p, body ul li, body ol li {
+    body,
+    body p,
+    body ul li,
+    body ol li {
         font-size: 15px;
     }
 
     section.top-block {
         padding-top: 40px;
         padding-bottom: 30px;
+    }
+
+    section.hero-black {
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
 
     .blog section.top-block.single {
@@ -429,6 +477,14 @@ body a.button.red-btn:active {
 
     .post blockquote p {
         font-size: 18px;
+    }
+
+    body .acc_content p {
+        font-size: 14px;
+    }
+
+    body .quiz_captcha p {
+        font-size: 12px;
     }
 }
 
@@ -445,6 +501,10 @@ body a.button.red-btn:active {
 
     section.footer {
         padding-top: 60px;
+    }
+
+    body .acc_content p {
+        font-size: 14px;
     }
 
     section.top-block {
@@ -467,6 +527,14 @@ body a.button.red-btn:active {
 
     .grid-three {
         grid-template-columns: 1fr;
+    }
+
+    .grid-two {
+        grid-template-columns: 1fr;
+    }
+
+    .post ul, .post ol {
+        padding-left: 18px;
     }
 }
 
@@ -534,6 +602,15 @@ body a.button.red-btn:active {
         padding-bottom: 30px;
     }
 
+    section.hero-black {
+        padding-top: 45px;
+        padding-bottom: 30px;
+    }
+
+    h1.hero-wrapper__title {
+        --theme-font-size: 21px;
+    }
+
     .post h2 {
         font-size: 18px;
     }
@@ -547,6 +624,14 @@ body a.button.red-btn:active {
     body ul li,
     body ol li {
         font-size: 15px;
+    }
+
+    body .quiz_captcha p {
+        font-size: 12px;
+    }
+
+    body .post .wp-block-spacer[style="height:60px"] {
+        height: 26px !important;
     }
 }
 

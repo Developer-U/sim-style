@@ -11,6 +11,7 @@ $page_id = get_the_ID();
 $gallery_block_color = get_field('gallery_block_color', $page_id); // Цвет фона блока
 $gallery_block_title = get_field('gallery_block_title', $page_id);
 $gallery_block_text = get_field('gallery_block_text', $page_id);
+$gallery_blocks_length = get_field('gallery_blocks_length', $page_id);
 ?>
 
 <section class="gallery-block
@@ -30,7 +31,9 @@ $gallery_block_text = get_field('gallery_block_text', $page_id);
         }
         ?>
 
-        <ul class="gallery-block__list gallery-block-list d-grid">
+        <ul class="gallery-block__list gallery-block-list d-grid
+            <?php if ($gallery_blocks_length == 2) { ?> grid-two <?php } ?>
+        ">
             <?php if (have_rows('new_gallery_block', $page_id)):
                 while (have_rows('new_gallery_block', $page_id)):
                     the_row();
@@ -40,11 +43,12 @@ $gallery_block_text = get_field('gallery_block_text', $page_id);
                     ?>
 
                     <li>
-                        <a class="gallery-block-list__item gal-item mb-3" href="<?php echo $gallery_block_img['url']; ?>" data-fancybox="block_gallery">
+                        <a class="gallery-block-list__item gal-item mb-3" href="<?php echo $gallery_block_img['url']; ?>"
+                            data-fancybox="block_gallery">
                             <img src="<?php echo $gallery_block_img['url']; ?>" alt="<?php echo $gallery_block_img['alt']; ?>">
                         </a>
 
-                        <?php 
+                        <?php
                         if ($gallery_image_title) {
                             echo '<p class="gal-item__title mb-2">';
                             echo $gallery_image_title;
@@ -52,7 +56,7 @@ $gallery_block_text = get_field('gallery_block_text', $page_id);
                         }
                         if ($gallery_image_link) {
                             echo '<a class="videos-block__link gal-item__link col-auto position-relative" href=" ' . $gallery_image_link . ' " target="_blank">Совершить экскурсию</a>';
-                        }                        
+                        }
                         ?>
                     </li>
 

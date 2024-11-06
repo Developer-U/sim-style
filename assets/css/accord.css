@@ -1,0 +1,97 @@
+body .accordionjs .acc_section {
+    border: none;
+    z-index: 2;
+}
+
+body .accordionjs .acc_section .acc_head {
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 30px;
+    padding: 14px 64px 14px 34px;
+}
+
+body .accordionjs .acc_section .acc_head span {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 16px;
+    right: 30px;
+    width: 26px;
+    height: 26px;
+    background: url('../img/arrow-down.svg') no-repeat center/contain;
+    transition: transform .4s ease-in;
+}
+
+body .accordionjs .acc_section .acc_head span.active {
+    transform: rotate(90deg);
+    transition: transform .15s ease-in-out;
+}
+
+body .accordionjs .acc_section .acc_content {
+    padding: 30px 20px;
+}
+
+body .accordionjs .acc_section.acc_active>.acc_head {
+    background: var(--white);
+    border-bottom: none;
+}
+
+body .accordionjs .acc_section:first-of-type, body .accordionjs .acc_section:first-of-type .acc_head {
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+@media (max-width:1199px) {
+    body .accordionjs .acc_section .acc_head {
+        font-size: 18px;
+    }
+}
+
+@media (max-width:930px) and (max-height:420px) {
+    body .accordionjs .acc_section .acc_head {
+        font-size: 15px;
+        padding: 8px 64px 8px 30px;
+    }
+
+    body .accordionjs .acc_section .acc_head span {
+        top: 26%;
+        right: 19px;
+        width: 20px;
+        height: 20px;
+    }
+
+    body .accordionjs .acc_section .acc_content {
+        padding: 20px;
+    }
+}
+
+@media (max-width:767px) {
+    body .accordionjs .acc_section .acc_head {
+        font-size: 15px;
+        padding: 8px 64px 8px 30px;
+    }
+
+    body .accordionjs .acc_section .acc_head span {
+        top: 26%;
+        right: 19px;
+        width: 20px;
+        height: 20px;
+    }
+
+    body .accordionjs .acc_section .acc_content {
+        padding: 20px;
+    }
+}
+
+@media (max-width:439px) {
+    body .accordionjs .acc_section .acc_head {
+        font-size: 14px;
+        border-radius: 12px;
+        padding: 8px 46px 8px 18px;
+    }
+
+    body .accordionjs .acc_section:first-of-type, body .accordionjs .acc_section:first-of-type .acc_head {
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+    }
+}

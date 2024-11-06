@@ -6,7 +6,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 register_nav_menus( array(
     'primary' => 'Основное',
     'footer-menu' => 'Основное в футере',    
-    'works-menu' => 'Меню услуг',  
+    'works-menu' => 'Меню услуг',
+    'studio-menu' => 'Меню студий',
 ));
 
 function estore_primary_menu() {
@@ -28,6 +29,14 @@ function estore_works_menu() {
     wp_nav_menu( [
         'theme_location'  => 'works-menu',    
         'menu_id'         => 'works-menu',
+        'menu_class'      => 'footer-menu'     
+    ] );
+}
+
+function estore_studio_menu() {
+    wp_nav_menu( [
+        'theme_location'  => 'studio-menu',    
+        'menu_id'         => 'studio-menu',
         'menu_class'      => 'footer-menu'     
     ] );
 }

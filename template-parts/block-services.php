@@ -8,6 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 $page_id = get_the_ID();
+$services_block_blockcolor = get_field('services_block_blockcolor', $page_id); // Цвет фона блока
 
 $arg_services =  array(
     'orderby'      => 'name',
@@ -24,7 +25,10 @@ $query_services = new WP_Query($arg_services);
 
 if ($query_services->have_posts() )  { ?>
 
-    <section class="services-block">
+    <section class="services-block
+    <?php if ($services_block_blockcolor == 'тёмный') { ?>dark
+        <?php } elseif($services_block_blockcolor == 'белый') { ?>white<?php } ?>
+    ">
         <div class="container">
             <?php if( !is_archive() ) { ?>
                 <h2>

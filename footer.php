@@ -90,6 +90,10 @@ $copyright = get_field('copyright', 'options');
 						</div>
 					</div>
 
+					<div class="footer__medium footer-medium">
+						<?php estore_studio_menu(); ?> 
+					</div>
+
 					<div class="footer__bottom footer-bottom d-grid">
 						<p class="footer-bottom__item copyright">
 							<?php if( $copyright ) { ?>
