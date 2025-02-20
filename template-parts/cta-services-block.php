@@ -8,13 +8,15 @@
  * @since        1.0.0
  * @license      GPL-2.0+
  **/
+$page_id = get_the_ID();
 $service_block_title = get_field('service_block_title');
 $service_block_image = get_field('service_block_image');
 ?>
 
-<article class="cta-wrapper gutenberg d-grid">
-    <div class="cta-wrapper__left">       
-        
+<article id="cta_<?php echo $page_id; ?>" class="cta-wrapper gutenberg d-grid" data-aos="fade-up" data-aos-offset="50"
+    data-aos-delay="0" data-aos-duration="1000" data-aos-easing="ease-in" data-aos-once="false">
+    <div class="cta-wrapper__left">
+
 
         <h3 class="cta-wrapper__subtitle">
             Закажите услугу:&nbsp;<?php the_title(); ?>&nbsp;уже сегодня!

@@ -53,6 +53,10 @@ figure {
     overflow: hidden;
 }
 
+body.single h1 {
+    font-size: 58px;
+}
+
 figure img {
     width: 100%;
     height: 100%;
@@ -67,6 +71,10 @@ figure.icon img {
     color: var(--blue);
 }
 
+.red-text, section.dark .red-text {
+    color: var(--red);
+}
+
 body ul,
 body li {
     list-style-type: none;
@@ -79,12 +87,17 @@ section {
     padding-bottom: 110px;
 }
 
+
 section.white {
     background-color: var(--white);
 }
 
 section.dark {
     background-color: var(--black);
+}
+
+section.line-up {
+    border-top: 1px solid #ccc;
 }
 
 section.dark * {
@@ -95,7 +108,7 @@ section.tariffs.dark.singular h2 {
     color: var(--black);
 }
 
-section.single-works {
+section.single-works, section.text-image.single-section {
     padding-top: 0;
     padding-bottom: 0;
 }
@@ -104,7 +117,7 @@ section.hero-black {
     padding-top: 22vh;
 }
 
-section.publications {
+section.publications, section.advantages-three.singular {
     padding-top: 0;
 }
 
@@ -128,6 +141,14 @@ section.top-block.single {
     padding-bottom: 118px;
 }
 
+section.fast-cta {
+    padding-bottom: 40px;
+}
+
+section.dark.fast-cta, section.dark.action-block {
+    border-radius: 30px;
+}
+
 .single-post section.top-block.single {
     padding-top: 11vw;
     padding-bottom: 70px;
@@ -145,6 +166,10 @@ section.top-block.single span.overlay {
     left: 0;
     background: rgba(0, 0, 0, .55);
 }
+
+/* section.singular {
+    padding-top: 0;
+} */
 
 body form input.input-form:focus {
     background: rgba(255, 255, 255, 0.8);
@@ -168,6 +193,10 @@ a.button {
     background-color: inherit;
 
     transition: all .25s ease-in-out;
+}
+
+a.button.action-block__btn {
+    width: 300px;
 }
 
 button:hover,
@@ -214,9 +243,59 @@ body a.button.red-btn:active {
     margin-bottom: 0;
 }
 
+.post .reviews-top__right>p:last-of-type {
+    margin-bottom: 10px;
+}
+
+.post .table-wrapper {
+    overflow-x: auto;
+}
+
+.post table thead th {
+    background: var(--blue);
+}
+
+.post table thead th.second {
+    background: #372697;
+}
+
+.post table thead th.third {
+    background: var(--dark-blue);
+}
+
+.post table thead th.first, .post table thead th.second, .post table thead th.third {
+    width: 22%;
+}
+
+.post table thead th {
+    color: var(--white);
+}
+
+.cell-second {
+    color: #372697;
+}
+
+.cell-third {
+    color: var(--dark-blue);
+}
+
+td.price {
+    font-size: 24px;
+}
+
+.tarif-table__desc {
+    display: block;
+    margin-top: 8px;
+    font-weight: 500;
+}
+
 .post ul,
 .post ol {
     padding-left: 40px;
+}
+
+.post ul.grid-two, .post ul.tariffs-list, .post ul.levels-list, .post ul.reviews__list, .post ul.web-list, .post ul.block-accord-list, .post ul.three-block-list {
+    padding-left: 0;
 }
 
 .post.work-process__text ol,
@@ -234,12 +313,25 @@ body a.button.red-btn:active {
     margin-bottom: 10px;
 }
 
+.post ul.services-list li {
+    list-style-type: none;
+    margin-bottom: 0;
+}
+
+.post ul.levels-list li, .post ul.reviews__list li {
+    list-style-type: none;
+}
+
 .post ol li {
     list-style-type: inherit;
 }
 
 .post figure {
     margin-bottom: 2rem;
+}
+
+.post figure.action-block-wrap__image {
+    margin-bottom: 0;
 }
 
 .post figure.portfolio-item__image {
@@ -257,7 +349,8 @@ body a.button.red-btn:active {
 
 .grid-three {
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    column-gap: 10px;
+    row-gap: 30px;
 }
 
 .grid-two {
@@ -318,9 +411,33 @@ body a.button.red-btn:active {
     margin-bottom: 4rem;
 }
 
+.single-button {
+    margin-bottom: 100px;
+}
+
+body .wpcf7-quiz-label,
+body input[type=text].wpcf7-quiz, body input[type=text].wpcf7-quiz::placeholder, body input[type=text].wpcf7-quiz:focus {
+    font-family: 'Montserrat', Sans-Serif;
+}
+
+
+
 @media (max-width:1785px) {
     section.hero-black {
         padding-top: 16vh;
+    }
+
+    .single .tariffs .grid-four {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .single section.fast-cta {
+        padding-bottom: 10px;
+        padding-top: 60px;
+    }
+
+    .single .post ul.web-list {
+        display: none;
     }
 }
 
@@ -351,8 +468,23 @@ body a.button.red-btn:active {
     }
 
     section.footer {
-        padding-top: 74px;
+        padding-top: 10vw;
         padding-bottom: 50px;
+    }
+
+    .single-web_type section.top-block.single {
+        padding-top: 12vw;
+        padding-bottom: 60px;
+    }
+
+    body.single h1 {
+        font-size: 56px;
+    }
+}
+
+@media (max-width:1599px) {
+    .single .three-block-list.grid-three {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -364,6 +496,11 @@ body a.button.red-btn:active {
 
     .post h2 {
         font-size: 26px;
+    }
+
+    .single h3.wp-block-heading {
+        font-size: 22px;
+        margin-bottom: 8px;
     }
 
     .grid-four {
@@ -387,6 +524,22 @@ body a.button.red-btn:active {
     .post blockquote p {
         font-size: 20px;
     }
+
+    .single-button {
+        margin-bottom: 60px;
+    }
+
+    body.single h1 {
+        font-size: 48px;
+    }
+
+    .post table th, .post table td {
+        font-size: 16px;
+    }
+
+    .tarif-table__desc {
+        font-size: 13px;
+    }
 }
 
 @media (max-width:1199px) {
@@ -404,6 +557,10 @@ body a.button.red-btn:active {
 
     .single-post section.top-block.single {
         padding-bottom: 30px;
+    }
+
+    .single h3.wp-block-heading {
+        font-size: 20px;
     }
 }
 
@@ -424,6 +581,10 @@ body a.button.red-btn:active {
 
     .post h2 {
         font-size: 22px;
+    }
+
+    body.single h1 {
+        font-size: 36px;
     }
 }
 
@@ -461,6 +622,7 @@ body a.button.red-btn:active {
         padding-bottom: 30px;
     }
 
+
     section.hero-black {
         padding-top: 20px;
         padding-bottom: 20px;
@@ -485,6 +647,18 @@ body a.button.red-btn:active {
 
     body .quiz_captcha p {
         font-size: 12px;
+    }
+
+    .post table th, .post table td {
+        font-size: 14px;
+    }
+
+    body.single h1 {
+        font-size: 28px;
+    }
+    .single-web_type section.top-block.single {
+        padding-top: 54px;
+        padding-bottom: 30px;
     }
 }
 
@@ -535,6 +709,37 @@ body a.button.red-btn:active {
 
     .post ul, .post ol {
         padding-left: 18px;
+    }
+
+    .single h3.wp-block-heading {
+        font-size: 18px;
+        margin-bottom: 4px;
+    }
+
+    .single section.fast-cta {
+        padding: 40px 16px;
+    }
+
+    .single .tariffs .grid-four {
+        grid-template-columns: 1fr;
+    }
+
+    .post table th, .post table td {
+        font-size: 14px;
+    }
+
+    .fast-cta div.buttons-list.single-wrap>p {
+        width: fit-content;
+        max-width: 313px;
+    }
+
+    .single .three-block-list.grid-three {
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+    }
+
+    body.single h1 {
+        font-size: 28px;
     }
 }
 
@@ -611,6 +816,10 @@ body a.button.red-btn:active {
         --theme-font-size: 21px;
     }
 
+    body.single h1 {
+        font-size: 24px;
+    }
+
     .post h2 {
         font-size: 18px;
     }
@@ -633,6 +842,13 @@ body a.button.red-btn:active {
     body .post .wp-block-spacer[style="height:60px"] {
         height: 26px !important;
     }
+    .post table thead th.first, .post table thead th.second, .post table thead th.third {
+        min-width: 93px;
+    }
+    a.button.action-block__btn {
+        width: 100%;
+    }
+    
 }
 
 /*Global end*/

@@ -22,7 +22,9 @@ $btns_type = get_field('btns_type_text_image', $page_id);
     <section class="text-image position-relative 
         <?php if ($block_color == 'тёмный') { ?>dark<?php } elseif ($block_color == 'белый') { ?>white<?php }
         ?>
-        <?php if ($block_image_position == 'справа') { ?>right<?php } ?>
+        <?php if ($block_image_position == 'справа') { ?>right<?php } 
+        if (is_single()) { ?> single-section<?php }
+        ?>
     ">
 
         <?php if ($block_image) { ?>
@@ -38,7 +40,7 @@ $btns_type = get_field('btns_type_text_image', $page_id);
                     </h2>
                 <?php } ?>
 
-                <div class="text-image__text post" data-aos="fade-right" data-aos-offset="200" data-aos-delay="0"
+                <div class="text-image__text post" data-aos="fade-right" data-aos-offset="50" data-aos-delay="0"
                     data-aos-duration="800" data-aos-easing="ease-in" data-aos-once="true">
                     <?php echo $block_text; ?>
                 </div>

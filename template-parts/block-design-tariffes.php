@@ -9,6 +9,7 @@ if (!defined('ABSPATH')) {
 }
 $page_id = get_the_ID();
 $tariffs_design_block_color = get_field('tariffs_design_block_color', $page_id); // Цвет фона блока
+$tariffs_design_line_up = get_field('tariffs_design_line_up', $page_id); // Серая верхняя окантовка
 $tariffs_design_block_title = get_field('tariffs_design_block_title', $page_id);
 $tariffs_design_block_text = get_field('tariffs_design_block_text', $page_id);
 $socials = get_field('social_icons', 'options');
@@ -17,12 +18,21 @@ if (have_rows('new_design_tarif', 'options')) {
     ?>
 
     <section id="design_tariffes" class="tariffs
-    <?php if ($tariffs_design_block_color == 'тёмный') { ?>dark<?php } ?>
+    <?php if ($tariffs_design_block_color == 'тёмный') { ?>dark
+    <?php } elseif ($tariffs_design_block_color == 'белый') { ?>white<?php } ?>
+    <?php if ($tariffs_design_line_up == 'да') { ?>line-up<?php } ?>
     ">
         <div class="container">
             <h2>
                 <?php echo $tariffs_design_block_title; ?>
             </h2>
+
+            <?php
+            if ($tariffs_design_block_text) { ?>
+                <div class="services-block__text post">
+                    <?php echo $tariffs_design_block_text; ?>
+                </div>
+            <?php } ?>
 
             <ul class="tariffs__list tariffs-list d-grid grid-four">
                 <?php

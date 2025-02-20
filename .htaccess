@@ -12,6 +12,10 @@ RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
+RewriteEngine On
+RewriteCond %{HTTP_HOST} sim-style.ru/byt-v-momente-i-prozhivat-zhizn-segodnya-kak-ya-nauchilsya-otdyhat/
+RewriteRule (.*) https://sim-style.ru/blog/byt-v-momente-i-prozhivat-zhizn-segodnya-kak-ya-nauchilsya-otdyhat/$1 [R=301,L]
+
 </IfModule>
 
 # END WordPress

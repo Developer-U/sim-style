@@ -9,6 +9,7 @@ if (!defined('ABSPATH')) {
 }
 $page_id = get_the_ID();
 $block_accordion_color = get_field('block_accordion_color', $page_id); // Цвет фона блока
+$block_accordion_line_up = get_field('block_accordion_line_up', $page_id); // Серая верхняя окантовка
 $block_accordion_title = get_field('block_accordion_title', $page_id);
 $block_accordion_text = get_field('block_accordion_text', $page_id);
 $block_accordion_image = get_field('block_accordion_image', $page_id);
@@ -19,6 +20,7 @@ if (have_rows('new_accordion_item', $page_id)) {
     <section id="block_<?php echo $page_id; ?>" class="text-image position-relative right block-accordion
     <?php if ($block_accordion_color == 'тёмный') { ?>dark
     <?php } elseif ($block_accordion_color == 'белый') { ?>white<?php } ?>
+    <?php if ($block_accordion_line_up == 'да') { ?>line-up<?php } ?>
     ">
         <?php if ($block_accordion_image) {
             echo '<figure class="text-image__image d-none d-lg-block"><img src=" ' . $block_accordion_image['url'] . '" alt=" ' . $block_accordion_image['alt'] . ' "></figure>';

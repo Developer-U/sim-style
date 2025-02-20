@@ -72,28 +72,22 @@ get_header();
     </section>
 
     <!-- Block main -->
-    <?php get_template_part('template-parts/block', 'three-items'); ?>
+    <?php get_template_part('template-parts/block', 'three-items');
+    
+    get_template_part('template-parts/block', 'services');
+    
+    get_template_part('template-parts/block', 'text-image');
 
-    <!-- Block Services -->
-    <?php get_template_part('template-parts/block', 'services'); ?>
+    get_template_part('template-parts/block', 'portfolio');
 
-    <!-- Block Text Image (Чем я могу быть полезен) -->
-    <?php get_template_part('template-parts/block', 'text-image'); ?>
+    get_template_part('template-parts/block', 'reviews');
+   
+    get_template_part('template-parts/block', 'levels');
+   
+    get_template_part('template-parts/block', 'tariffes');
 
-    <!-- Block Portfolio -->
-    <?php get_template_part('template-parts/block', 'portfolio'); ?>
+    get_template_part('template-parts/last', 'posts');    
+  
+    get_template_part('template-parts/cta', 'zakaz'); 
 
-    <!-- Block Reviews -->
-    <?php get_template_part('template-parts/block', 'reviews'); ?>
-
-    <!-- Block Work Levels -->
-    <?php get_template_part('template-parts/block', 'levels'); ?>
-
-    <!-- Block Work Tariffs -->
-    <?php get_template_part('template-parts/block', 'tariffes'); ?>
-
-    <!-- Block CTA -->
-    <?php get_template_part('template-parts/cta', 'zakaz'); ?>
-
-<?php
 get_footer();

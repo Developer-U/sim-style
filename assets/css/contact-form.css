@@ -126,6 +126,10 @@ form .wpcf7-form-control-wrap {
         font-size: 12px;
         margin-left: 16px;
     }
+    .single .fast-cta .agree+span.wpcf7-list-item-label {    
+        margin-left: 26px;
+        display: block;
+    }
 
     .hero-black form input.input-form {
         height: 42px;
@@ -137,6 +141,10 @@ form .wpcf7-form-control-wrap {
 
     body .hero-black form input.button.inwrapper-btn {
         margin-top: 0;
+    }
+
+    .fast-cta form input.button {     
+        margin-bottom: 0;
     }
 }
 

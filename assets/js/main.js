@@ -8,10 +8,13 @@ window.addEventListener('DOMContentLoaded', function(){
 
     const form_wrappers = document.querySelectorAll('.cta-wrapper');
 
+    
+
     form_wrappers.forEach(function(form_wrapper){
         let form_btn = form_wrapper.querySelector('.inwrapper-btn');        
+        
 
-        if(availableScreenWidth < 768) {
+        if(form_btn && availableScreenWidth < 768) {
             form_btn.value = 'Получить предложение';
         }
     });     

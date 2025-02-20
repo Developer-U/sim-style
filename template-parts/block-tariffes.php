@@ -23,6 +23,7 @@ $arg_web_type = array(
     'posts_per_page' => 99,
     'post_type' => 'web_type',
     'post_status' => 'publish',
+    'post__not_in' => array( $id ), 
 );
 
 $query_web_type = new WP_Query($arg_web_type);

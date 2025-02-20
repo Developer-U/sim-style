@@ -20,7 +20,8 @@ $cta_block_images = get_field('cta_block_images', $page_type);
 <section class="cta-block" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out"
     data-aos-once="true" data-aos-mirror="false" data-aos-anchor-placement="center top">
     <div class="container">
-        <?php if ($cta_block_title) { ?>
+        <?php  
+        if ($cta_block_title) { ?>
             <h2>
                 <?php echo $cta_block_title; ?>
             </h2>

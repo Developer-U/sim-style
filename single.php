@@ -36,7 +36,7 @@ get_template_part('template-parts/top', 'block');
 
 <div class="ct-container">
     <main class="inner_wrapper d-flex flex-column flex-xl-row">
-        <div class="sidebar_content post-block post col">
+        <div class="sidebar_content post-block post col single-left-block">
 			<div>
 				<?php the_content(); ?>
 

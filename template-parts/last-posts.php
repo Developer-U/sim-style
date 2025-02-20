@@ -30,7 +30,9 @@ if ($query_last_post->have_posts()) { ?>
                 <h2>
                     <?php echo $block_lasts_title; ?>
                 </h2>
-            <?php } ?>
+            <?php } else {
+                echo '<h2>Последние публикации</h2>';
+            } ?>
             <div class="blog-main__content archive-content">
                 <?php
                 while ($query_last_post->have_posts()) {

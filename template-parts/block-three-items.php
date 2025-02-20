@@ -9,6 +9,7 @@ if (!defined('ABSPATH')) {
 }
 $page_id = get_the_ID();
 $three_items_blockcolor = get_field('three_items_blockcolor', $page_id); // Цвет фона блока
+$three_items_line_up = get_field('three_items_line_up', $page_id); // Серая верхняя окантовка
 $three_items_blocktitle = get_field('three_items_blocktitle', $page_id);
 $three_items_blocktext = get_field('three_items_blocktext', $page_id);
 $socials = get_field('social_icons', 'options');
@@ -19,6 +20,7 @@ if (have_rows('new_item', $page_id)) {
     <section id="block_<?php echo $page_id; ?>" class="tariffs three-block
     <?php if ($three_items_blockcolor == 'тёмный') { ?>dark
     <?php } elseif($three_items_blockcolor == 'белый') { ?>white<?php } ?>
+    <?php if ($three_items_line_up == 'да') { ?>line-up<?php } ?>
     ">
         <div class="container">
             <?php if ($three_items_blocktitle) {
@@ -56,7 +58,7 @@ if (have_rows('new_item', $page_id)) {
                                 </a>
                                 <?php
                                 if ($new_item_text) {
-                                    echo '<div class="grid-three__text mt-4">' . $new_item_text . '</div>';
+                                    echo '<div class="grid-three__text mt-2 mt-xxl-4">' . $new_item_text . '</div>';
                                 } ?>
                             </div>
 

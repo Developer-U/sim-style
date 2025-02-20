@@ -8,6 +8,8 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 $page_id = get_the_ID();
+$reviews_blockcolor = get_field('reviews_blockcolor', $page_id); // Цвет фона блока
+$reviews_line_up = get_field('reviews_line_up', $page_id); // Серая верхняя окантовка
 $reviews_length = is_page('otzyvy') ? 99 : 3;
 $reviews_block_title = get_field('reviews_block_title', $page_id);
 $reviews_block_text = get_field('reviews_block_text', $page_id);
@@ -24,7 +26,12 @@ $query_reviews = new WP_Query($arg_reviews);
 
 if ($query_reviews->have_posts()) { ?>
 
-    <section class="services-block portfolio-block js-reviews dark">
+    <section class="services-block portfolio-block js-reviews
+    <?php if ($reviews_blockcolor == 'тёмный' || is_page('otzyvy')) { ?>dark
+    <?php } elseif ($reviews_blockcolor == 'белый') { ?>white<?php } ?>
+    <?php if ($reviews_line_up == 'да') { ?>line-up<?php } ?>
+    " data-aos="fade-up" data-aos-offset="0" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in"
+        data-aos-once="true" data-aos-anchor-placement="top">
         <div class="container">
             <?php if (is_page('otzyvy')) {
                 if (have_rows('new_reviews')) { ?>
@@ -117,9 +124,9 @@ if ($query_reviews->have_posts()) { ?>
                         wp_reset_postdata() ?>
                     <?php } ?>
                 </ul>
-            
-                <a href="/otzyvy" class="button transparent-btn">смотреть все отзывы</a>  
-            <?php } ?>      
+
+                <a href="/otzyvy" class="button transparent-btn">смотреть все отзывы</a>
+            <?php } ?>
         </div>
     </section>
 

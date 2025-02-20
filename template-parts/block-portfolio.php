@@ -25,6 +25,7 @@ $arg_works = array(
 
 $query_works = new WP_Query($arg_works);
 
+
 if ($query_works->have_posts()) { ?>
 
     <section class="services-block portfolio-block <?php if (is_single()) { ?>singular<?php } ?>">
