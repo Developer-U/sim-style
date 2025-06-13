@@ -45,8 +45,8 @@ if (have_rows('add_tariff_table_row', $page_id)) {
                     <thead>
                         <tr>
                             <th class="tarif-table key"></th>
-                            <th class="tarif-table value first">Стартап</th>
-                            <th class="tarif-table value second">Популярный</th>
+                            <th class="tarif-table value first">Эконом</th>
+                            <th class="tarif-table value second">Стандарт</th>
                             <th class="tarif-table value third">Премиум</th>
                         </tr>
                     </thead>

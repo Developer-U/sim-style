@@ -38,7 +38,7 @@ if (have_rows('adv_three_item', $page_id)) {
 
             <ul class="advantages-three__list services-list d-grid">
                 <?php
-                if (have_rows('adv_three_item', $page_id)) { 
+                if (have_rows('adv_three_item', $page_id)) {
                     $i = 0; ?>
                     <?php while (have_rows('adv_three_item', $page_id)) {
                         the_row();
@@ -66,7 +66,8 @@ if (have_rows('adv_three_item', $page_id)) {
                                 ?> data-aos-delay="<?php echo 100 * ($index * 2); ?>"
                             data-aos-duration="1200" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="true"
                             data-aos-anchor-placement="top">
-                            <div class="services-item__wrap d-flex flex-column justify-content-between">
+                            <div
+                                class="services-item__wrap d-flex flex-column <?php if (!is_singular('web_type')) { ?>justify-content-between<?php } ?>">
                                 <h3 class="services-item__title">
                                     <?php echo $adv_three_item_title; ?>
                                 </h3>

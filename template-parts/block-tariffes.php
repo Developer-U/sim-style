@@ -8,7 +8,7 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 $page_id = get_the_ID();
-$tariffs_block_title = get_field('tariffs_block_title', $page_id);
+$tariffs_block_title = is_archive() ? get_field('tariffs_block_title_' . $page_id, 'options') : get_field('tariffs_block_title', $page_id);
 $tariffs_block_text = get_field('tariffs_block_text', $page_id);
 $tariffs_block_cta_image = get_field('tariffs_block_cta_image', $page_id);
 $tariffs_block_cta_text = get_field('tariffs_block_cta_text', $page_id);
@@ -17,14 +17,24 @@ $btns_type = get_field('btns_type_tariffs', $page_id);
 
 $tariffes_block_singular_title = get_field('tariffes_block_singular_title');
 
-$arg_web_type = array(
-    'orderby' => 'name',
-    'order' => 'DESC',
-    'posts_per_page' => 99,
-    'post_type' => 'web_type',
-    'post_status' => 'publish',
-    'post__not_in' => array( $id ), 
-);
+if (is_archive('web_type')) {
+    $arg_web_type = array(
+        'orderby' => 'name',
+        'order' => 'DESC',
+        'posts_per_page' => 99,
+        'post_type' => 'web_type',
+        'post_status' => 'publish',
+    );
+} else {
+    $arg_web_type = array(
+        'orderby' => 'name',
+        'order' => 'DESC',
+        'posts_per_page' => 99,
+        'post_type' => 'web_type',
+        'post_status' => 'publish',
+        'post__not_in' => array($id),
+    );
+}
 
 $query_web_type = new WP_Query($arg_web_type);
 
@@ -33,21 +43,14 @@ if ($query_web_type->have_posts()) {
 
     <section id="tariffes" class="
         <?php if (!is_single()) {
-            ; ?>tariffs dark<?php } else { ?>tariffs dark singular<?php } ?>">
+            ; ?>tariffs dark<?php } else { ?>tariffs dark singular bordered-top<?php } ?>">
         <div class="container">
-            <?php if (!is_single() && $tariffs_block_title) { ?>
+            <?php if ($tariffs_block_title) { ?>
                 <h2>
                     <?php echo $tariffs_block_title; ?>
                 </h2>
-            <?php } else if (is_single() && $tariffes_block_singular_title) { ?>
-                    <h2>
-                    <?php echo $tariffes_block_singular_title; ?>
-                    </h2>
-            <?php } else if (is_archive('works')) { ?>
-                        <h2>
-                            Сколько стоит разработка сайта?
-                        </h2>
-            <?php } ?>
+            <?php }
+            ?>
 
             <ul class="tariffs__list tariffs-list d-grid grid-four">
 
@@ -56,6 +59,7 @@ if ($query_web_type->have_posts()) {
                     <?php while ($query_web_type->have_posts()):
                         $query_web_type->the_post();
                         $web_price = get_field('web_price');
+                        $web_type_tarif_block_price = get_field('web_type_tarif_block_price');
                         ?>
 
                         <li class="reviews-item tariffs-list__item d-grid js-item" data-name="<?php the_title(); ?>">
@@ -70,10 +74,10 @@ if ($query_web_type->have_posts()) {
                                     <?php the_excerpt(); ?>
                                 </div>
 
-                                <?php                               
-                                if ($web_price) { ?>
+                                <?php
+                                if ($web_type_tarif_block_price['first']) { ?>
                                     <h3 class="tariffs-list__title tariffs-list__title_price">
-                                        <?php echo $web_price; ?>&nbsp;₽
+                                        <?php echo 'от&nbsp;' . number_format($web_type_tarif_block_price['first'], 0, '', ' '); ?>&nbsp;₽
                                     </h3>
                                 <?php } ?>
 
@@ -105,14 +109,9 @@ if ($query_web_type->have_posts()) {
                 <?php }
 
                 if ($tariffs_block_cta_image) { ?>
-                    <div class="tariffes__cta tariffes-cta d-grid align-items-center"
-                        data-aos="fade-left"
-                        data-aos-delay="50"
-                        data-aos-duration="1200"
-                        data-aos-easing="ease-in-out"
-                        data-aos-once="true"
-                        data-aos-anchor-placement="center top"
-                    >
+                    <div class="tariffes__cta tariffes-cta d-grid align-items-center" data-aos="fade-left" data-aos-delay="50"
+                        data-aos-duration="1200" data-aos-easing="ease-in-out" data-aos-once="true"
+                        data-aos-anchor-placement="center top">
                         <figure class="tariffes-cta__image">
                             <img src="<?php echo $tariffs_block_cta_image['url']; ?>"
                                 alt="<?php echo $tariffs_block_cta_image['alt']; ?>">

@@ -198,6 +198,7 @@ body .hero-black__wrapper .hero-slider-wrapper__description p {
 
 /*Services block*/
 
+
 .services-block__text {
     margin-bottom: 2.5rem;
 }
@@ -231,6 +232,19 @@ body .hero-black__wrapper .hero-slider-wrapper__description p {
     transition: all .3s ease-in;
 }
 
+.advantages-three__list .services-item:hover,
+.advantages-three__list .services-item:focus {
+    background-color: initial;
+}
+
+.advantages-three__list .services-list__item.services-item {
+    padding-right: 100px;
+}
+
+.advantages-three__text {
+    font-size: 16px;
+}
+
 h3.services-item__title {
     text-transform: uppercase;
     font-size: 25px;
@@ -248,6 +262,11 @@ h3.services-item__title {
 .services-item:focus h3.services-item__title {
     color: var(--platinum);
     transition: all .3s ease-in;
+}
+
+.advantages-three__list .services-item:hover h3.services-item__title,
+.advantages-three__list .services-item:focus h3.services-item__title {
+    color: initial;
 }
 
 .services-item__wrap {
@@ -435,6 +454,15 @@ section.dark a:hover,
 section.dark a:focus {
     text-decoration: underline;
     transition: all .25s ease-in-out;
+}
+
+section.dark a.tariffes-list__link {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+section.dark a.tariffes-list__link:hover, section.dark a.tariffes-list__link:focus {
+    text-decoration: none;
 }
 
 .tariffs-list__item_design a.button {
@@ -723,27 +751,6 @@ h3.tariffs-list__title {
     margin-bottom: 0.7rem;
 }
 
-.tariffes-list__link {
-    font-size: 14px;
-    font-weight: 600;
-    position: relative;
-}
-
-.tariffes-list__link::after {
-    display: block;
-    content: "";
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    top: -3px;
-    right: -33px;
-    background: url('./assets/img/tariffes-more.svg') no-repeat center/contain;
-}
-
-.tariffes-list__link.three-block__link::after {
-    background-image: url('./assets/img/tariffes-more-blue.svg');
-}
-
 .tariffes-cta {
     margin-bottom: -110px;
 }
@@ -1025,7 +1032,7 @@ h1.top-block__title {
     background-attachment: fixed;
 }
 
-.inner_wrapper .sidebar_content {    
+.inner_wrapper .sidebar_content {
     padding-right: 30px;
     border-right: 1px solid var(--grey);
     /* height: 100vh;
@@ -1404,6 +1411,27 @@ a.gallery-block-list__item img {
 }
 
 /*Action end*/
+
+/*404*/
+
+.error-404-box.d-md-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 90px;
+}
+
+.error-404__text p {
+    font-size: 20px;
+}
+
+.error-404__text p:not(:last-of-type) {
+    margin-bottom: 0.9rem;
+}
+
+.error-404-box__image {
+    border-radius: 20px;
+}
+
+/*404 end*/
 
 /*Media*/
 
@@ -1838,8 +1866,21 @@ a.gallery-block-list__item img {
         width: calc(48% - 90px);
         max-width: 320px;
     }
+
     .single-left-block {
         padding-top: 60px;
+    }
+
+    .error-404__text p {
+        font-size: 18px;
+    }
+
+    .error-404__text p:not(:last-of-type) {
+        margin-bottom: 0.5rem;
+    }
+
+    .error-404-box__image {
+        height: 29vw;
     }
 }
 
@@ -1984,6 +2025,14 @@ a.gallery-block-list__item img {
 
     .hero-black__cta {
         font-size: 19px;
+    }
+
+    .error-404__text p {
+        font-size: 16px;
+    }
+
+    .error-404__text p:not(:last-of-type) {
+        margin-bottom: 0.3rem;
     }
 }
 
@@ -2240,6 +2289,14 @@ a.gallery-block-list__item img {
 
     .action-block-wrap__descr p {
         font-size: 16px;
+    }
+
+    .error-404__text p {
+        font-size: 14px;
+    }
+
+    .error-404-box.d-md-grid {
+        gap: 38px;
     }
 }
 

@@ -8,19 +8,19 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 $page_id = get_the_ID();
-if (is_archive() || is_single()) {
+if (is_archive() || is_single() || is_404()) {
     $page_type = 'options';
 } else {
     $page_type = $page_id;
 }
-$cta_block_title = get_field('cta_block_title', $page_type);
-$cta_block_images = get_field('cta_block_images', $page_type);
+$cta_block_title = is_404() ? get_field('cta_block_title_404', $page_type) : get_field('cta_block_title', $page_type);
+$cta_block_images = is_404() ? get_field('cta_block_images_404', $page_type) : get_field('cta_block_images', $page_type);
 ?>
 
 <section class="cta-block" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out"
     data-aos-once="true" data-aos-mirror="false" data-aos-anchor-placement="center top">
     <div class="container">
-        <?php  
+        <?php      
         if ($cta_block_title) { ?>
             <h2>
                 <?php echo $cta_block_title; ?>

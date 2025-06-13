@@ -23,7 +23,13 @@ if (is_single()) { ?>
             <?php
             if (is_archive()) { ?>
                 <h1 class="top-block__title">
-                    <?php the_archive_title(''); ?>
+                    <?php 
+                    if(is_archive('web_type')) {
+                        echo 'Выберите сайт по&nbsp;душе';
+                    } else {
+                        echo get_the_archive_title('');
+                    }
+                    ?>
                 </h1>
 
                 <?php get_template_part('template-parts/block', 'breadcrumbs');
