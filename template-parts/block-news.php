@@ -25,8 +25,7 @@ $query_news = new WP_Query($arg_news);
 
 if ($query_news->have_posts() && $news_block_title) { ?>
 
-    <section class="block-publications
-    <?php if ($news_blockcolor == 'тёмный') { ?>dark
+    <section class="block-publications<?php if ($news_blockcolor == 'тёмный') { ?>dark
     <?php } elseif ($news_blockcolor == 'белый') { ?>white<?php } ?>
     <?php if ($news_line_up == 'да') { ?>line-up<?php } ?>
     ">

@@ -163,6 +163,22 @@ function be_register_blocks() {
         'keywords'		=> array( 'quote', 'mention', 'cite' )
     ));
 
-    
+    // Блок Текст со стилизованными буллетами - изображение с увеличением
+    acf_register_block( array(
+        'name'			=> 'text-image-bullets',
+        'title'			=> __( 'Текст c буллетами, - изображение' ),
+        'render_template'	=> get_stylesheet_directory() . '/template-parts/gutenberg/text-bullets-image-contain.php',
+        'category'		=> 'custom-blocks-category',
+        'icon' => array(
+            // Specifying a background color to appear with the icon e.g.: in the inserter.
+            'background' => '#CC0033',
+            // Specifying a color for the icon (optional: if not set, a readable color will be automatically defined)
+            'foreground' => '#fff',
+            // Specifying a dashicon for the block
+            'src' => 'align-right',
+        ),
+        'mode'			=> 'edit',
+        'keywords'		=> array( 'quote', 'mention', 'cite' )
+    ));
 }
 add_action('acf/init', 'be_register_blocks' );

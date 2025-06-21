@@ -110,15 +110,20 @@ section.white {
     background-color: var(--white);
 }
 
-section.dark {
+section.dark, .wp-block-dark {
     background-color: var(--black);
+}
+
+.wp-block-dark {
+    padding: 30px;
+    border-radius: 20px;
 }
 
 section.line-up {
     border-top: 1px solid #ccc;
 }
 
-section.dark * {
+section.dark *, .wp-block-dark * {
     color: var(--platinum);
 }
 
@@ -129,6 +134,12 @@ section.tariffs.dark.singular h2 {
 section.single-works, section.text-image.single-section {
     padding-top: 0;
     padding-bottom: 0;
+}
+
+.single-web_type section.text-image.white.single-section {
+    padding: 80px 30px 10px;
+    border-radius: 20px;
+    margin-top: 60px;
 }
 
 section.hero-black {
@@ -183,6 +194,23 @@ section.top-block.single span.overlay {
     top: 0;
     left: 0;
     background: rgba(0, 0, 0, .55);
+}
+
+.gallery-zoom {
+    width: 100%;
+    height: 100%;
+    display: block;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background: rgba(32, 28, 67, .5) url('../img/magnifier.svg') no-repeat center/108px auto;
+    transition: opacity .3s ease-in-out;
+}
+
+.text-bullets__image:hover .gallery-zoom {
+    opacity: 1;
+    transition: opacity .3s ease-in-out;
 }
 
 /* section.singular {

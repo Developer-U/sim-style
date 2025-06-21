@@ -22,9 +22,7 @@ $args_last_post = array(
 $query_last_post = new WP_Query($args_last_post);
 
 if ($query_last_post->have_posts()) { ?>
-    <section class="text-image position-relative 
-        <?php if ($block_text_color == 'тёмный') { ?>dark<?php } ?>        
-    ">
+    <section class="text-image position-relative">
         <div class="container">
             <?php if ($block_lasts_title) { ?>
                 <h2>

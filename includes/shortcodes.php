@@ -168,3 +168,40 @@ function web_type_tariff_table_shortcode_callback()
 	return $output;
 }
 
+/*
+ * Шорткод levels
+ * Блок Этапы сотрудничества
+ */
+add_shortcode('levels_block', 'levels_block_shortcode_callback');
+
+function levels_block_shortcode_callback()
+{
+	ob_start();
+
+	get_template_part('template-parts/block', 'levels');
+
+	$output = ob_get_contents(); // всё, что вывели, окажется внутри $output
+	ob_end_clean();
+
+	return $output;
+}
+
+/*
+ * Шорткод last_news
+ * Блок Последние публикации
+ */
+add_shortcode('last_news', 'last_news_shortcode_callback');
+
+function last_news_shortcode_callback()
+{
+	ob_start();
+
+	get_template_part('template-parts/last', 'posts');
+
+	$output = ob_get_contents(); // всё, что вывели, окажется внутри $output
+	ob_end_clean();
+
+	return $output;
+}
+
+
