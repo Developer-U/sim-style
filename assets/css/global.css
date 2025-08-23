@@ -86,6 +86,10 @@ figure.icon img {
     color: var(--red);
 }
 
+.dark input[name="math-quiz"], .dark input[name="math-quiz"]:focus {
+    color: var(--white);
+}
+
 body ul,
 body li {
     list-style-type: none;
@@ -651,6 +655,10 @@ body input[type=text].wpcf7-quiz, body input[type=text].wpcf7-quiz::placeholder,
     body.single h1 {
         font-size: 36px;
     }
+
+    body p.has-medium-font-size {
+        font-size: 18px !important;
+    }
 }
 
 @media (max-width:991px) {
@@ -676,6 +684,10 @@ body input[type=text].wpcf7-quiz, body input[type=text].wpcf7-quiz::placeholder,
 
     .post blockquote p {
         font-size: 17px;
+    }
+
+    body p.has-medium-font-size {
+        font-size: 17px !important;
     }
 }
 
@@ -735,6 +747,14 @@ body input[type=text].wpcf7-quiz, body input[type=text].wpcf7-quiz::placeholder,
     .single-web_type section.top-block.single {
         padding-top: 54px;
         padding-bottom: 30px;
+    }
+
+    body p.has-medium-font-size {
+        font-size: 16px !important;
+    }
+
+    figure.wp-block-image.size-large img {
+        width: 80px !important;
     }
 }
 
@@ -816,6 +836,14 @@ body input[type=text].wpcf7-quiz, body input[type=text].wpcf7-quiz::placeholder,
 
     body.single h1 {
         font-size: 28px;
+    }
+
+    body p.has-medium-font-size {
+        font-size: 16px !important;
+    }
+
+    figure.wp-block-image.size-large img {
+        width: 80px !important;
     }
 }
 

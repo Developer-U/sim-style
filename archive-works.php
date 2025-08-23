@@ -7,8 +7,8 @@
  *
  */
 ## Удаляет "Рубрика: ", "Метка: " и т.д. из заголовка архива
-add_filter( 'get_the_archive_title', function( $title ){
-	return preg_replace('~^[^:]+: ~', '', $title );
+add_filter('get_the_archive_title', function ($title) {
+    return preg_replace('~^[^:]+: ~', '', $title);
 });
 
 $seo_tekst = get_field('seo_tekst', 'options');
@@ -16,23 +16,31 @@ $seo_tekst = get_field('seo_tekst', 'options');
 get_header();
 ?>
 
-    <!-- Top Block -->
-    <?php get_template_part('template-parts/top', 'block'); ?>
+<!-- Top Block -->
+<section class="top-block">
+    <div class="container text-center position-relative">
+        <h1 class="top-block__title">
+            Портфолио
+        </h1>
 
-    <!-- Block Services -->
-    <?php get_template_part('template-parts/block', 'portfolio');     
-    
-    if ($seo_tekst) { 
-        echo '<div class="container seo-text">';
-        echo '<div class="post">' .$seo_tekst. '</div>';
-        echo '</div>';
-    } ?>
+        <?php get_template_part('template-parts/block', 'breadcrumbs'); ?>
+    </div>
+</section>
 
-    <!-- Block Work Tariffs -->
-    <?php get_template_part('template-parts/block', 'tariffes'); ?>
+<!-- Block Services -->
+<?php get_template_part('template-parts/block', 'portfolio');
 
-    <!-- Block CTA -->
-    <?php get_template_part('template-parts/cta', 'zakaz'); ?>
+if ($seo_tekst) {
+    echo '<div class="container seo-text">';
+    echo '<div class="post">' . $seo_tekst . '</div>';
+    echo '</div>';
+} ?>
+
+<!-- Block Work Tariffs -->
+<?php get_template_part('template-parts/block', 'tariffes'); ?>
+
+<!-- Block CTA -->
+<?php get_template_part('template-parts/cta', 'zakaz'); ?>
 
 <?php
 get_footer();

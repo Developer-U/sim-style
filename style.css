@@ -241,6 +241,10 @@ body .hero-black__wrapper .hero-slider-wrapper__description p {
     padding-right: 100px;
 }
 
+.advantages-three__list .services-list__item.services-item.full {
+    padding-right: 24px;
+}
+
 .advantages-three__text {
     font-size: 16px;
 }
@@ -256,6 +260,10 @@ h3.services-item__title {
     text-transform: none;
     font-size: 20px;
     color: var(--marengo);
+}
+
+.single-web_type .services-list__item h3.services-item__title {
+    color: var(--dark-blue);
 }
 
 .services-item:hover h3.services-item__title,
@@ -1164,6 +1172,7 @@ h1.top-block__title {
     padding: 6px 20px;
     border-radius: 40px;
     border: 1px solid var(--blue);
+    color: var(--blue);
 }
 
 button.blog-btn {
@@ -1173,6 +1182,10 @@ button.blog-btn {
     line-height: 130%;
     background-color: var(--platinum);
     border-radius: 40px;
+}
+
+.blog-tabs__item a:hover {
+    color: var(--dark-blue);
 }
 
 .blog-tabs__item a.active {
@@ -1264,8 +1277,16 @@ button.blog-btn {
     border-bottom: 1px solid #ccc;
 }
 
+.archive-content__heading, .archive-content__heading:hover {
+    color: inherit;
+}
+
 .archive-head {
     background-color: grey;
+}
+
+.blog-btn a {
+    color: var(--blue);
 }
 
 

@@ -45,7 +45,7 @@ $archive_post_description = get_field('archive_post_description', 'options');
 			<!-- Категории постов -->
 			<?php
 			$arg_news = array(
-				'orderby' => 'name',
+				'orderby' => 'date',
 				'order' => 'DESC',
 				'posts_per_page' => '12', // Поставь нужное число в листинге
 				'post_type' => 'post', // Подходит к любому типу постов

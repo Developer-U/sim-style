@@ -48,7 +48,7 @@ if (have_rows('adv_three_item', $page_id)) {
                         $index = $i++;
                         ?>
 
-                        <li class="services-list__item services-item"
+                        <li class="services-list__item services-item <?php if(!$adv_three_item_image) {?> full <?php }?>"
                             style="background-image:url( <?php echo $adv_three_item_image['url']; ?> );" data-aos="fade-<?php
                                 if ($index == 0 || $index == 3)
                                     echo 'right';

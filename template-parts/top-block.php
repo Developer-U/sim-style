@@ -8,7 +8,7 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 $page_id = get_the_ID();
-$archive_description = get_field('archive_description_' .$page_id,'options');
+$archive_description = get_field('archive_description_' . $page_id, 'options');
 $page_title = get_field('page_title', $page_id);
 
 if (is_single()) { ?>
@@ -23,8 +23,8 @@ if (is_single()) { ?>
             <?php
             if (is_archive()) { ?>
                 <h1 class="top-block__title">
-                    <?php 
-                    if(is_archive('web_type')) {
+                    <?php
+                    if (is_archive('web_type')) {
                         echo 'Выберите сайт по&nbsp;душе';
                     } else {
                         echo get_the_archive_title('');
@@ -35,7 +35,7 @@ if (is_single()) { ?>
                 <?php get_template_part('template-parts/block', 'breadcrumbs');
 
 
-                if ($archive_description) {                    
+                if ($archive_description) {
                     echo '<h3 class="top-block__subtitle">' . $archive_description . '</h3>';
                 }
 
@@ -46,11 +46,11 @@ if (is_single()) { ?>
                     </h1>
 
                 <?php get_template_part('template-parts/block', 'breadcrumbs'); ?>
-                    <?php if(is_singular('works')) { ?>
+                <?php if (is_singular('works')) { ?>
                         <div class="top-block__description post works">
-                            <?php the_excerpt(); ?>
+                        <?php the_excerpt(); ?>
                         </div>
-                    <?php }?>
+                <?php } ?>
 
                     <?php
                     if (is_singular('services')) {
@@ -59,13 +59,13 @@ if (is_single()) { ?>
 
             } else { ?>
                     <h1 class="top-block__title">
-                    <?php 
-                    if(is_page('about') ){
+                    <?php
+                    if (is_page('about')) {
                         echo $page_title;
                     } else {
                         the_title();
                     }
-                     ?>
+                    ?>
                     </h1>
 
                 <?php get_template_part('template-parts/block', 'breadcrumbs');
