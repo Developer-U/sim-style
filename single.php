@@ -35,8 +35,8 @@ get_template_part('template-parts/top', 'block');
 ?>
 
 <div class="ct-container">
-    <main class="inner_wrapper d-flex flex-column flex-xl-row">
-        <div class="sidebar_content post-block post col single-left-block">
+	<main class="inner_wrapper d-flex flex-column flex-xl-row">
+		<div class="sidebar_content post-block post col single-left-block">
 			<div>
 				<?php the_content(); ?>
 
@@ -44,24 +44,30 @@ get_template_part('template-parts/top', 'block');
 					<?php
 					the_post_navigation(
 						array(
-							'prev_text' => '<span class="nav-subtitle prev">' . esc_html__( '←', 'estore' ) . '</span> <span class="nav-title">%title</span>',
-							'next_text' => '<span class="nav-title">%title</span> <span class="nav-subtitle next">' . esc_html__( '→', 'estore' ) . '</span>',           
+							'prev_text' => '<span class="nav-subtitle prev">' . esc_html__('←', 'estore') . '</span> <span class="nav-title">%title</span>',
+							'next_text' => '<span class="nav-title">%title</span> <span class="nav-subtitle next">' . esc_html__('→', 'estore') . '</span>',
 							'class' => 'posts-nav',
 						)
 					);
 					?>
-				</div>  
-			</div> 
-        </div>
+				</div>
+			</div>
+		</div>
 
-        <div class="sidebar_wrapper tutorial__sidebar">
-            <div class="tutorial__accord tutorial-accord">    		
-                <div class="sidebar"> 
-                    <?php get_template_part('template-parts/sidebar', 'post'); ?> 
-                </div>
-            </div>
-        </div>
-    </main>
+		<div class="sidebar_wrapper tutorial__sidebar">
+			<div class="tutorial__accord tutorial-accord">
+				<div class="sidebar">
+					<?php
+					if (is_singular('news')) {
+						get_template_part('template-parts/sidebar', 'news');
+					} else {
+						get_template_part('template-parts/sidebar', 'post');
+					}
+					?>
+				</div>
+			</div>
+		</div>
+	</main>
 </div>
 
 

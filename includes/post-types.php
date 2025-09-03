@@ -1,6 +1,6 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
+if (!defined('ABSPATH')) {
+  exit; // Exit if accessed directly
 }
 
 /* Регистрируем новый тип записей - Услуги
@@ -17,7 +17,7 @@ function services()
     'new_item' => 'Новая услуга',
     'view_item' => 'Посмотреть Услуги',
     'search_items' => 'Найти Услуги',
-    'not_found' =>  'Услуг не найдено',
+    'not_found' => 'Услуг не найдено',
     'not_found_in_trash' => 'В корзине услуг не найдено',
     'parent_item_colon' => '',
     'menu_name' => 'Услуги'
@@ -35,12 +35,12 @@ function services()
     'rewrite' => true,
     'capability_type' => 'post',
     'has_archive' => true,
-    'hierarchical' => true,    
+    'hierarchical' => true,
     'menu_position' => 5,
-    'supports' => array('title','editor','thumbnail', 'custom-fields'),
+    'supports' => array('title', 'editor', 'thumbnail', 'custom-fields'),
 
   );
-  register_post_type('services',$args);  
+  register_post_type('services', $args);
 }
 
 
@@ -58,7 +58,7 @@ function works()
     'new_item' => 'Новая работа в портфолио',
     'view_item' => 'Посмотреть данные работы',
     'search_items' => 'Найти работу',
-    'not_found' =>  'Работ в портфолио не найдено',
+    'not_found' => 'Работ в портфолио не найдено',
     'not_found_in_trash' => 'В корзине данных не найдено',
     'parent_item_colon' => '',
     'menu_name' => 'Портфолио'
@@ -78,9 +78,9 @@ function works()
     'hierarchical' => false,
     'menu_icon' => 'dashicons-portfolio',
     'menu_position' => 2,
-    'supports' => array('title', 'excerpt', 'thumbnail', 'editor', 'custom-fields'),	
+    'supports' => array('title', 'excerpt', 'thumbnail', 'editor', 'custom-fields'),
   );
-  register_post_type('works',$args_works);  
+  register_post_type('works', $args_works);
 }
 
 /* Регистрируем новый тип записей - Отзывы
@@ -97,7 +97,7 @@ function reviews()
     'new_item' => 'Новый Отзыв',
     'view_item' => 'Посмотреть Отзывы',
     'search_items' => 'Найти Отзывы',
-    'not_found' =>  'Отзывов не найдено',
+    'not_found' => 'Отзывов не найдено',
     'not_found_in_trash' => 'В корзине отзывов не найдено',
     'parent_item_colon' => '',
     'menu_name' => 'Отзывы'
@@ -116,10 +116,10 @@ function reviews()
     'has_archive' => true,
     'hierarchical' => false,
     'menu_position' => 5,
-    'supports' => array('title','editor','thumbnail', 'custom-fields'),
+    'supports' => array('title', 'editor', 'thumbnail', 'custom-fields'),
 
   );
-  register_post_type('reviews',$args);  
+  register_post_type('reviews', $args);
 }
 
 /* Регистрируем новый тип записей - Виды сайтов
@@ -136,7 +136,7 @@ function web_type()
     'new_item' => 'Новый тип сайта',
     'view_item' => 'Посмотреть тип сайта',
     'search_items' => 'Найти типы сайтов',
-    'not_found' =>  'Типов сайта не найдено',
+    'not_found' => 'Типов сайта не найдено',
     'not_found_in_trash' => 'В корзине типов сайтов не найдено',
     'parent_item_colon' => '',
     'menu_name' => 'Типы сайтов'
@@ -156,8 +156,48 @@ function web_type()
     'has_archive' => true,
     'hierarchical' => false,
     'menu_position' => 5,
-    'supports' => array('title', 'excerpt', 'editor','thumbnail', 'custom-fields'),
+    'supports' => array('title', 'excerpt', 'editor', 'thumbnail', 'custom-fields'),
 
   );
-  register_post_type('web_type',$args_web_types);  
+  register_post_type('web_type', $args_web_types);
+}
+
+/* Регистрируем новый тип записей - Новости
+-----------------------------------------------*/
+add_action('init', 'news');
+function news()
+{
+  $labels = array(
+    'name' => 'Новости',
+    'singular_name' => 'Новость',
+    'add_new' => 'Добавить новость',
+    'add_new_item' => 'Добавить новость',
+    'edit_item' => 'Редактировать новость',
+    'new_item' => 'Новая новость',
+    'view_item' => 'Посмотреть новости',
+    'search_items' => 'Найти новость',
+    'not_found' => 'Новостей не найдено',
+    'not_found_in_trash' => 'В корзине новостей не найдено',
+    'parent_item_colon' => '',
+    'menu_name' => 'Новости'
+  );
+
+  $args = array(
+    'labels' => $labels,
+    'public' => true,
+    'menu_icon' => 'dashicons-admin-site',
+    'publicly_queryable' => true,
+    'show_ui' => true,
+    'show_in_menu' => true,
+    'show_in_rest' => true,
+    'query_var' => true,
+    'rewrite' => true,
+    'capability_type' => 'post',
+    'has_archive' => true,
+    'hierarchical' => true,
+    'menu_position' => 6,
+    'supports' => array('title', 'excerpt', 'editor', 'thumbnail', 'custom-fields'),
+
+  );
+  register_post_type('news', $args);
 }
