@@ -16,7 +16,7 @@ $web_type_tarif_block_text = get_field('web_type_tarif_block_text', $page_id);
 $web_type_tarif_block_time = get_field('web_type_tarif_block_time', $page_id);
 $web_type_tarif_block_price = get_field('web_type_tarif_block_price', $page_id);
 
-if (have_rows('add_tariff_table_row', $page_id)) {
+if (have_rows('add_tariff_table_row', $page_id)) {    
     ?>
 
     <section class="web-type-tarif
@@ -59,7 +59,7 @@ if (have_rows('add_tariff_table_row', $page_id)) {
                                 $tariff_table_row_title = get_sub_field('tariff_table_row_title', $page_id);
                                 $tariff_table_row_keys = get_sub_field('tariff_table_row_keys', $page_id);
                                 $tariff_table_row_description_need = get_sub_field('tariff_table_row_description_need', $page_id);
-                                $tariff_table_row_description = get_sub_field('tariff_table_row_description', $page_id);
+                                $tariff_table_row_description = get_sub_field('tariff_table_row_description', $page_id);                                
                                 ?>
                                 <tr>
                                     <td class="fw-bold"><?php echo $tariff_table_row_title; ?></td>

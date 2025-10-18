@@ -31,7 +31,7 @@ if ($query_other_services->have_posts()) { ?>
             <?php if ($other_services_block_title) {
                 echo '<h2>' . $other_services_block_title . '</h2>';
             }
-            if ($two_items_blocktext) {
+            if ($other_services_block_text) {
                 echo '<div class="three-block__text post">' . $other_services_block_text . '</div>';
             }
             ?>
