@@ -1,0 +1,11 @@
+.js-item-content {
+    display: none;
+}
+.js-item-open.opened, .js-item-open:hover.opened, .js-item-open:focus.opened {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    color: var(--red);
+    font-weight: 500;
+    min-height: fit-content;
+}
