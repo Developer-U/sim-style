@@ -21,7 +21,7 @@ $socials = get_field('social_icons', 'options');
     </li>
 
     <li class="buttons-list__btn">
-        <a href="https://api.whatsapp.com/send?phone=<?php echo $socials['whatsapp']; ?>" target="_blank"
+        <a href="https://max.ru/u/f9LHodD0cOI1P3Ih2KZl_R5EWrkcwxjq97HGlXA52815bw_dQhj7cP1tHmA" target="_blank"
             class="button red-btn">
             Быстрый заказ
         </a>

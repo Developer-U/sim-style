@@ -12,7 +12,7 @@ $levels_block_title = get_field('levels_block_title', 'options');
 if( have_rows('new_work_level', 'options') ) {
 ?>
 
-    <section class="services-block levels-block">
+    <section id="levels" class="services-block levels-block">
         <div class="container">            
             <h2 class="levels-block__title">
                 <?php echo $levels_block_title ? $levels_block_title : 'Как мы будем работать'; ?>
@@ -41,9 +41,9 @@ if( have_rows('new_work_level', 'options') ) {
                                 0<?php echo $index+1; ?>
                             </span>
 
-                            <p class="levels-item__text">
+                            <div class="levels-item__text">
                                 <?php echo $work_level_text; ?>
-                            </p>
+                            </div>
                         </div>                        
                     </li>                    
 

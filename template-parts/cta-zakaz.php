@@ -17,7 +17,7 @@ $cta_block_title = is_404() ? get_field('cta_block_title_404', $page_type) : get
 $cta_block_images = is_404() ? get_field('cta_block_images_404', $page_type) : get_field('cta_block_images', $page_type);
 ?>
 
-<section class="cta-block" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out"
+<section id="cta_<?php echo $page_id?>"class="cta-block" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out"
     data-aos-once="true" data-aos-mirror="false" data-aos-anchor-placement="center top">
     <div class="container">
         <?php      

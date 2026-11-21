@@ -70,7 +70,7 @@ if ($query_web_type->have_posts()) {
                                     </h3>
                                 </a>
 
-                                <div class="tariffs-list__text post">
+                                <div class="tariffs-list__text post d-none d-md-block">
                                     <?php the_excerpt(); ?>
                                 </div>
 

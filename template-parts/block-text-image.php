@@ -21,6 +21,7 @@ $btns_type = get_field('btns_type_text_image', $page_id);
 
     <section class="text-image position-relative 
         <?php if ($block_color == 'тёмный') { ?>dark<?php } elseif ($block_color == 'белый') { ?>white<?php }
+        if (is_front_page()) { ?> d-none d-md-block<?php }
         ?>
         <?php if ($block_image_position == 'справа') { ?>right<?php } 
         if (is_single()) { ?> single-section<?php }

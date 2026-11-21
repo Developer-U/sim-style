@@ -41,7 +41,7 @@ if ($query_works->have_posts()) { ?>
             <?php }
 
             if ($works_block_text && !is_archive('works')) { ?>
-                <div class="services-block__text post">
+                <div class="services-block__text post d-none d-md-block">
                     <?php echo $works_block_text; ?>
                 </div>
             <?php } ?>

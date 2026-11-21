@@ -108,7 +108,7 @@ if ($query_reviews->have_posts()) { ?>
                 <?php }
 
                 if ($reviews_block_text) { ?>
-                    <div class="services-block__text post">
+                    <div class="services-block__text post d-none d-md-block">
                         <?php echo $reviews_block_text; ?>
                     </div>
                 <?php } ?>

@@ -390,7 +390,7 @@ body .button.services-list__btn::after {
     height: 343px;
 }
 
-section.portfolio-block {
+section.portfolio-block, section.services-block {
     border-top: 1px solid #ccc;
 }
 
@@ -631,7 +631,7 @@ h2.levels-block__title {
 }
 
 .levels-list {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     row-gap: 6rem;
     column-gap: 14px;
 }
@@ -1656,11 +1656,6 @@ a.gallery-block-list__item img {
         height: 110px;
     }
 
-    .levels-list {
-        grid-template-columns: repeat(3, 1fr);
-        row-gap: 4rem;
-    }
-
     body ul li.tariffs-list__item {
         min-height: 446px;
     }
@@ -2090,6 +2085,11 @@ a.gallery-block-list__item img {
     .error-404__text p:not(:last-of-type) {
         margin-bottom: 0.3rem;
     }
+
+    .levels-list {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 4rem;
+    }
 }
 
 @media (max-width:991px) {
@@ -2098,6 +2098,19 @@ a.gallery-block-list__item img {
         height: 72%;
         top: auto;
         bottom: 0;
+    }
+
+    .tariffs-list__title.tariffs-list__title_price {
+        font-size: 24px;
+    }
+
+    .hero__author[data-aos] {
+        opacity: 1 !important;
+        /* Блок остаётся видимым */
+        transform: none !important;
+        /* Убирает трансформацию */
+        transition: none !important;
+        /* Отключает анимацию перехода */
     }
 
     section.hero h1.hero-slider-wrapper__title {

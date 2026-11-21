@@ -20,7 +20,7 @@ if( $socials['telegram'] || $socials['whatsapp'] || $phone_num ) {
 
         if( $socials['whatsapp'] ) { ?>
             <li class="buttons-list__btn">
-                <a href="https://api.whatsapp.com/send?phone=<?php echo $socials['whatsapp']; ?>" target="blank" class="button red-btn">Написать в WhatsApp</a>
+                <a href="https://max.ru/u/f9LHodD0cOI1P3Ih2KZl_R5EWrkcwxjq97HGlXA52815bw_dQhj7cP1tHmA" target="blank" class="button red-btn">Написать в MAX</a>
             </li>
         <?php }
 
